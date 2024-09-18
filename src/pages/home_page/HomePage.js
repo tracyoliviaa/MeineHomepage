@@ -31,7 +31,7 @@ export default function Home() {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> Zero Degree Coder</strong>
+                <strong className="main-name"> Martina Schulz</strong>
               </h1>
 
               <div className="typing-homeclass">
@@ -59,29 +59,11 @@ export default function Home() {
                       <FaLinkedinIn />
                     </a>
                   </li>
+              
+                 
                   <li className="socialicons">
                     <a
-                      href="https://www.instagram.com/_md_mafujul_hasan_/"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="iconcolour homesocialicons"
-                    >
-                      <AiFillInstagram />
-                    </a>
-                  </li>
-                  <li className="socialicons">
-                    <a
-                      href="https://www.facebook.com/mh.tonmoy.13"
-                      target="_blank"
-                      rel="noreferrer"
-                      className="iconcolour homesocialicons"
-                    >
-                      <FaFacebookF />
-                    </a>
-                  </li>
-                  <li className="socialicons">
-                    <a
-                      href="mailto:mdtonmoy13.mt@gmail.com/"
+                      href="mailto:m-o-schulz@web.de/"
                       target="_blank"
                       rel="noreferrer"
                       className="iconcolour homesocialicons"
@@ -97,7 +79,7 @@ export default function Home() {
                 <Tilt>
                   <Fade cascade>
                     <img
-                      src="./profile.png"
+                      src="./profile.jpg"
                       alt="home pic"
                       className="img-fluid"
                     />

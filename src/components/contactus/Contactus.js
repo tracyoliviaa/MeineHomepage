@@ -118,24 +118,24 @@ export default function Contactus() {
                 <Col md={7}>
                   <div className="contacts-details">
                     <a
-                      href={`mailto:mdtonmoy13.mt@gmail.com`}
+                      href={`mailto:m-o-schulz@web.de`}
                       className="personal-details"
                     >
                       <div className="detailsIcon">
                         <FiAtSign />
                       </div>
                       <p style={{ color: "#fbd9ad" }}>
-                        zerodegreecoder@gmail.com
+                        m-o-schulz@web.de
                       </p>
                     </a>
                     <a
-                      href={`tel:+880 1603-550521`}
+                      href={`tel:+49 176-52952328`}
                       className="personal-details"
                     >
                       <div className="detailsIcon">
                         <FiPhone />
                       </div>
-                      <p style={{ color: "#fbd9ad" }}>+880 1603-550521</p>
+                      <p style={{ color: "#fbd9ad" }}>+49 0176 52952328</p>
                     </a>
                     <a
                       href="https://maps.app.goo.gl/iUHJvPAhJXwJayo68"
@@ -146,24 +146,24 @@ export default function Contactus() {
                           <HiOutlineLocationMarker />
                         </div>
                         <p style={{ color: "#fbd9ad" }}>
-                          BOF R/A, Gazipur Cantonment, BOF-1703, Dhaka,
-                          Bangladesh.
+                          Am Forthaus 51 
+                          63263 Neu-Isenburg 
                         </p>
                       </div>
                     </a>
                   </div>
                   <div className="contact-map">
-                    <iframe
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3643.833618785371!2d90.41265112695315!3d24.036931700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755db9832166e63%3A0x96050e560e6dc4fa!2sBOF%20Central%20Mosque!5e0!3m2!1sen!2sbd!4v1695023265917!5m2!1sen!2sbd"
-                      frameBorder="0"
-                      allowFullScreen=""
-                      aria-hidden="false"
-                      title="Contact Me"
-                      tabIndex="0"
-                      loading="lazy"
-                      className=""
-                    ></iframe>
-                  </div>
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30000!2d8.655813!3d50.070399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e64c454b844f21%3A0x7a5d341bbd0b5f44!2sNeu-Isenburg!5e0!3m2!1sde!2sde!4v1695023265917!5m2!1sde!2sde"
+    frameBorder="0"
+    allowFullScreen=""
+    aria-hidden="false"
+    title="Contact Me"
+    tabIndex="0"
+    loading="lazy"
+    className=""
+  ></iframe>
+</div>
                 </Col>
               </Row>
             </Col>

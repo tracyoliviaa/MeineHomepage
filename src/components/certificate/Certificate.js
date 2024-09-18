@@ -2,7 +2,6 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Graphics_Design from "../../images/Graphics_Design.jpg";
 import CCNA_Certificate from "../../images/CCNA_Certificate.jpg";
-import cbta from "../../images/CBT&A.pdf";
 import c from "../../images/c.jpg";
 import skill from "../../images/skill.png";
 import problem_solving from "../../images/problem_solving.png";
@@ -32,13 +31,7 @@ export default function Certificate() {
                 style={{ width: "100%", height: "100%" }}
               />
             </Col>
-            <Col md={4}>
-              <img
-                src={cbta}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
-            </Col>
+           
             <Col md={4}>
               <img
                 src={Graphics_Design}
@@ -46,13 +39,8 @@ export default function Certificate() {
                 style={{ width: "100%", height: "100%" }}
               />
             </Col>
-            <Col md={4}>
-              <img
-                src={CCNA_Certificate}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
-            </Col>
+        
+            
             <Col md={4}>
               <img src={c} alt="" style={{ width: "100%", height: "100%" }} />
             </Col>

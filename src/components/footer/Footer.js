@@ -10,10 +10,10 @@ function Footer() {
     <Container fluid className="footer">
       <Row>
         <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by MD Mafujul Hasan (Add your name)</h3>
+          <h3>Designed and Developed by Martina</h3>
         </Col>
         <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} MD Mafujul Hasan</h3>
+          <h3>Copyright © {year} Martina</h3>
         </Col>
         <Col md="4" className="footer-body">
           <ul className="footer-icons">
@@ -59,7 +59,7 @@ function Footer() {
             </li>
             <li className="social-icons">
               <a
-                href="mailto:mdtonmoy13.mt@gmail.com/"
+                href="mailto:m-o-schulz@web.de/"
                 style={{ color: "white" }}
                 target="_blank"
                 rel="noopener noreferrer"
