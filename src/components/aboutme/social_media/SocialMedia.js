@@ -22,7 +22,7 @@ export default function SocialMedia() {
           </Col>
           <Col md={3}>
             <a
-              href="https://github.com/MD-MAFUJUL-HASAN"
+              href="https://github.com/tracyolivia"
               target="_blank"
               rel="noreferrer"
               className="icon-colour  home-social-icons"
@@ -34,7 +34,7 @@ export default function SocialMedia() {
           </Col>
           <Col md={3}>
             <a
-              href="https://www.linkedin.com/in/md-mafujul-hasan/"
+              href="https://www.linkedin.com/in/martina-schulz/"
               target="_blank"
               rel="noreferrer"
               className="icon-colour  home-social-icons"

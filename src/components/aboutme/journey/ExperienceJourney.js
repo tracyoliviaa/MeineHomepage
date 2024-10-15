@@ -26,66 +26,109 @@ function ExperienceJourney() {
         </Link>
       </div>
       <div className="mt-5">
-        <Flip top cascade>
-          <h1>Experience Journey</h1>
-        </Flip>
-      </div>
-      <VerticalTimeline>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
-          contentArrowStyle={{ borderLeft: "7px solid  rgb(78 22 112)" }}
-          date="2023 - Continuing"
-          iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
-          icon={<PersonIcon />}
-        >
-          <h5 className="vertical-timeline-element-title">
-            Study World
-          </h5>
-          <h6 className="vertical-timeline-element-subtitle mt-2">
-            Branch Manager & Student Counsellor
-          </h6>
-          <p>• Provide Education Counselling to students and guardians for study abroad.</p>
-          <p>• Providing information about Universities/Colleges, Course/Fees, Admissions, Visa procedures etc.</p>
-          <p>• Effective follow-ups with the prospective students/guardians.</p>
-          <p>• Provide daily, Weekly, monthly, and yearly reporting about all operational activities.</p>
-          <p>• Processing student visa applications based on entry requirements and admissions procedures and 
-            enhance their chances of success in interviews by developing their skills.</p>
-          <p>• Preparing applications for admission into different foreign universities.</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(78 22 112)" }}
-          date="2021 - 2022"
-          iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
-          icon={<PersonIcon />}
-        >
-          <h5 className="vertical-timeline-element-title">
-            Excel Telecom (Pvt.) Limited - (National Distributor of SAMSUNG in Bangladesh)
-          </h5>
-          <h6 className="vertical-timeline-element-subtitle mt-2">
-            Management of Information System
-          </h6>
-          <p>• Proficient in developing, deploying and managing computerized systems that gather, retain, evaluate and exhibit 
-            data to facilitate the achievement of organizational aims and objectives.</p>
-          <p>• Proficient in collecting and organizing data from diverse sources, utilizing statistical techniques and software 
-            tools for data analysis and creating comprehensive reports and presentations that showcase significant insights and trends.</p>
-          <p>• Consistently completed assigned tasks in a timely and efficient manner as directed by management, while maintaining 
-            effective communication between the company and employees.</p>
-          <p>• Proficient in monitoring daily business operation costs, verifying and evaluating accounting transactions updates, 
-            and providing corresponding reports to top management.</p>
-          <p>• Skilled in collecting and compiling monthly reports, conducting inventory analysis for month-end, quarterly, 
-            and year-end closing, and submitting reports in accordance with management requirements.</p>
-          <p>• Proficient in developing and maintaining various reporting dashboard, technical support to end-users, 
-            diagnosing hardware and software issues, and collaborating with IT teams to promptly resolve system-related problems.</p>
-        </VerticalTimelineElement>
+  <Flip top cascade>
+    <h1>Experience Journey</h1>
+  </Flip>
+</div>
+<VerticalTimeline>
+  <VerticalTimelineElement
+    className="vertical-timeline-element--work"
+    contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    contentArrowStyle={{ borderLeft: "7px solid  rgb(78 22 112)" }}
+    date="03/2022 - 06/2024"
+    iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    icon={<PersonIcon />}
+  >
+    <h5 className="vertical-timeline-element-title">
+      Fachinformatikerin für Anwendungsentwicklung
+    </h5>
+    <h6 className="vertical-timeline-element-subtitle mt-2">
+      SRH, Heidelberg
+    </h6>
+    <p>
+      Ausbildung zur Fachinformatikerin für Anwendungsentwicklung. Erfahrung in
+      Softwareentwicklung, Datenbanken und IT-Unterstützung. Anwendung von agilen Methoden
+      wie Scrum.
+    </p>
+  </VerticalTimelineElement>
 
-        <VerticalTimelineElement
-          iconStyle={{ background: "#fbd9ad", color: "rgb(78 22 112)" }}
-          icon={<StarIcon />}
-        />
-      </VerticalTimeline>
+  <VerticalTimelineElement
+    className="vertical-timeline-element--work"
+    contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    contentArrowStyle={{ borderRight: "7px solid  rgb(78 22 112)" }}
+    date="01/2018 - 12/2018"
+    iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    icon={<PersonIcon />}
+  >
+    <h5 className="vertical-timeline-element-title">Stromsparhelfer</h5>
+    <h6 className="vertical-timeline-element-subtitle mt-2">
+      Caritas Offenbach
+    </h6>
+    <p>
+      Arbeit als Stromsparhelfer bei der Caritas in Offenbach. Beratung und
+      Unterstützung von Haushalten zur Energieeinsparung.
+    </p>
+  </VerticalTimelineElement>
+
+  <VerticalTimelineElement
+    className="vertical-timeline-element--work"
+    contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    contentArrowStyle={{ borderRight: "7px solid  rgb(78 22 112)" }}
+    date="11/2016 - 03/2017"
+    iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    icon={<PersonIcon />}
+  >
+    <h5 className="vertical-timeline-element-title">Buchhaltung Assistenz</h5>
+    <h6 className="vertical-timeline-element-subtitle mt-2">
+      Seniorenzentrum Offenbach
+    </h6>
+    <p>
+      Assistenz in der Buchhaltung des Seniorenzentrums Offenbach. Unterstützung bei der
+      Finanzverwaltung und Buchhaltungsaufgaben.
+    </p>
+  </VerticalTimelineElement>
+
+  <VerticalTimelineElement
+    className="vertical-timeline-element--work"
+    contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    contentArrowStyle={{ borderRight: "7px solid  rgb(78 22 112)" }}
+    date="01/2013 - 10/2015"
+    iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    icon={<PersonIcon />}
+  >
+    <h5 className="vertical-timeline-element-title">Au Pair</h5>
+    <h6 className="vertical-timeline-element-subtitle mt-2">
+      Familie Stevenson, Phoenix, Arizona
+    </h6>
+    <p>
+      Tätigkeit als Au Pair bei einer Familie in Phoenix, Arizona. Betreuung von Kindern
+      und Unterstützung im Haushalt.
+    </p>
+  </VerticalTimelineElement>
+
+  <VerticalTimelineElement
+    className="vertical-timeline-element--work"
+    contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    contentArrowStyle={{ borderRight: "7px solid  rgb(78 22 112)" }}
+    date="02/1998 - 09/2004"
+    iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
+    icon={<PersonIcon />}
+  >
+    <h5 className="vertical-timeline-element-title">Kaufmännische Hilfe</h5>
+    <h6 className="vertical-timeline-element-subtitle mt-2">
+      Symbol Dietzenbach
+    </h6>
+    <p>
+      Kaufmännische Unterstützung bei Symbol in Dietzenbach. Erfahrung in administrativen
+      und kaufmännischen Aufgaben.
+    </p>
+  </VerticalTimelineElement>
+
+  <VerticalTimelineElement
+    iconStyle={{ background: "#fbd9ad", color: "rgb(78 22 112)" }}
+    icon={<StarIcon />}
+  />
+</VerticalTimeline>
     </div>
   );
 }
