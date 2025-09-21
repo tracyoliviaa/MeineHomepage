@@ -41,7 +41,7 @@ export default function CertificatePage() {
                             <div className="cert-card">
                               <div className="content">
                                 <a
-                                  href="https://www.hackerrank.com/certificates/3573ea1a35bb"
+                                  href="https://www.hackerrank.com/certificates/02cf34962bf9"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
@@ -73,8 +73,7 @@ export default function CertificatePage() {
                                   className="cert-body-title"
                                   style={{ fontWeight: 700, color: "#fbd9ad" }}
                                 >
-                                  Problem Solving Basic : Programming
-                                  Fundamentals
+                                  SQL Basic : Querying and managing data
                                 </h2>
                                 <h3
                                   className="cert-body-subtitle"
@@ -95,7 +94,7 @@ export default function CertificatePage() {
                             <div className="cert-card">
                               <div className="content">
                                 <a
-                                  href="https://www.hackerrank.com/certificates/af66a6615aad"
+                                  href="https://www.hackerrank.com/certificates/8cebd621a497"
                                   target="_blank"
                                   rel="noopener noreferrer"
                                 >
@@ -127,7 +126,7 @@ export default function CertificatePage() {
                                   className="cert-body-title"
                                   style={{ fontWeight: 700, color: "#fbd9ad" }}
                                 >
-                                  Python Basic : Programming Fundamentals
+                                  SQL Advanced : Tables, Joins and More
                                 </h2>
                                 <h3
                                   className="cert-body-subtitle"
