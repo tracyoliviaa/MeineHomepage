@@ -1,16 +1,15 @@
+import React, { useState, useEffect } from "react";
 import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { AiOutlineDownload } from "react-icons/ai";
 import Particle from "../../Particle";
-import pdf from "../../assets/";
+import pdf from "../../assets/Lebenslauf  Martina Schulz.pdf";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import Zoom from "react-reveal/Zoom";
-import React, { useState, useEffect } from "react";
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
-const resumeLink =
-  "https://raw.githubusercontent.com/";
+// Ensure PDF.js worker is set up correctly
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function Resume() {
   const [width, setWidth] = useState(1200);
@@ -42,7 +41,7 @@ function Resume() {
                 </Button>
               </div>
               <div className="resume d-flex justify-content-center">
-                <Document file={resumeLink}>
+                <Document file={pdf}>
                   <Page pageNumber={1} scale={width > 786 ? 1.6 : 0.4} />
                 </Document>
               </div>
