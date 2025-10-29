@@ -1,37 +1,62 @@
-.App {
-  text-align: center;
+/* CSS-Reset für konsistentes Box-Modell und Schrift */
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+    font-size: var(--font-size-base);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  margin: 0;
+  font-family: var(--font-family-sans);
+  background-color: var(--color-background);
+  color: var(--color-text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; /* Bessere Schriftglättung */
 }
 
-.App-header {
-  background-color: #282c34;
+/* Haupt-App-Container (ersetzt .App) */
+.App-Layout {
+  display: flex; /* Basis für ein mögliches Sidebar-Layout */
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* Optional: max-width und Zentrierung für Inhaltsseiten, falls keine Sidebar */
 }
 
-.App-link {
-  color: #61dafb;
+/* Header (ersetzt .App-header) */
+.App-Header {
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between; /* Elemente links und rechts */
+  align-items: center;
+  border-bottom: 1px solid var(--color-border);
 }
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+/* Generische Styling-Klassen für Elemente */
+.Brand-Logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
 }
+
+/* Links */
+.App-Link {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.App-Link:hover {
+  color: #0056b3; /* Dunklere primäre Farbe beim Hover */
+  text-decoration: underline;
+}
+
+/* Entfernung nicht benötigter Boilerplate-Klassen */
+/*
+.App-logo, @keyframes App-logo-spin, @media (prefers-reduced-motion)
+würden in einem professionellen Setup entfernt oder durch spezifische
+Komponenten-Styles (z.B. für Lade-Spinner) ersetzt werden.
+*/

@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Slide from 'react-reveal/Slide';
 import Fade from 'react-reveal/Fade';
+// ... (Die Imports und die Komponentenstruktur bleiben gleich)
 
 const About = () => {
   return (
@@ -24,20 +25,19 @@ const About = () => {
           <Col md={7}>
             <Fade duration={3000}>
               <p className="home-about-body">
-                Mein Name ist <b className="purple">Martina Schulz</b> und ich studiere  
-                <b className="purple">Informatik</b> an der <b className="purple">SRH</b> in Heidelberg.
+                Hallo! Ich bin <b className="purple">Martina Schulz</b>, eine engagierte 
+                <b className="purple"> Informatikstudentin</b> der <b className="purple">SRH Hochschule Heidelberg</b>.
                 <br />
                 <br />
-                Ich beherrsche verschiedene Programmiersprachen wie 
-                <b className="purple">C, C++, Java, Python, HTML, CSS, PHP und JavaScript</b>.
+                Mein Fokus liegt auf der Entwicklung <b className="purple">effizienter und skalierbarer Softwarelösungen</b>. Ich verfüge über fundierte Kenntnisse in Kernsprachen wie 
+                <b className="purple"> Java, C/C++, und Python</b>, die ich primär für Backend-Logik und Datenverarbeitung einsetze.
                 <br />
                 <br />
-                Außerdem habe ich Erfahrung mit Frameworks und Bibliotheken wie 
-                <b className="purple">NodeJS, ReactJS, OpenCV und NumPy</b>.
+                In der Webentwicklung konzentriere ich mich auf den modernen Stack: Ich nutze 
+                <b className="purple"> ReactJS und JavaScript (ES6+)</b> für dynamische Frontends und <b className="purple">NodeJS</b> für robuste serverseitige Anwendungen.
                 <br />
                 <br />
-                In meiner Freizeit entwickle ich gerne neue Technologien und 
-                <b className="purple">baue neue Webanwendungen</b>.
+                Über meine akademischen Projekte hinaus verfolge ich leidenschaftlich gerne <b className="purple">eigene Full-Stack-Projekte</b>, in denen ich stets neue Technologien integriere, um praxisrelevante Probleme zu lösen.
               </p>
             </Fade>
           </Col>

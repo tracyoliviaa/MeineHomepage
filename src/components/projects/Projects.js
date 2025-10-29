@@ -2,13 +2,14 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Zoom from "react-reveal/Zoom";
 import { Fade } from "react-reveal";
-import nyc from "../../images/nyc.png";
-import ci from "../../images/onboarding.png";
-import hd from "../../images/hd.png";
-import pp from "../../images/portfolio.png";
 import { FaCode } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
+
+import timeTrackProImage from "../../images/nyc.png";
+import shopEaseImage from "../../images/hd.png";
+import taskFlowImage from "../../images/onboarding.png";
+
 
 export default function Projects() {
   return (
@@ -21,9 +22,11 @@ export default function Projects() {
               className="certificate-description d-flex justify-content-start"
             >
               <Zoom left cascade>
-                <h1 className="aboutme-heading">Projects</h1>
+                <h1 className="aboutme-heading">Projekte</h1>
               </Zoom>
             </Col>
+
+            {/* --- Projekt 1: TimeTrackPro --- */}
             <Col md={3}>
               <Fade bottom>
                 <div
@@ -35,22 +38,20 @@ export default function Projects() {
                   }}
                 >
                   <div className="projectContent">
-                    <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                      New Year CountDown
+                    <h5 id="timeTrackPro" style={{ color: "#fbd9ad" }}>
+                      TimeTrackPro – Arbeitszeiterfassung
                     </h5>
-                    <img src={nyc} alt={nyc} />
+                    <img src={timeTrackProImage} alt="TimeTrackPro" />
                     <div className="project--showcaseBtn">
                       <a
-                        href={
-                          "https://github.com/MD-MAFUJUL-HASAN/Web_Programming/tree/main/New-Year-Countdown"
-                        }
+                        href={"#"} // TODO: GitHub/Live-Link einfügen
                         target="_blank"
                         rel="noreferrer"
                         className={"iconBtn"}
-                        aria-labelledby={`code`}
+                        aria-labelledby={`code-ttpro`}
                       >
                         <FaCode
-                          id={`code`}
+                          id={`code-ttpro`}
                           className={"icon"}
                           aria-label="Code"
                         />
@@ -66,12 +67,9 @@ export default function Projects() {
                         fontWeight: 600,
                       }}
                     >
-                      The New Year Countdown Project is more than just a
-                      celebration; it's a testament to the human spirit and our
-                      shared aspirations for a brighter future. So, mark your
-                      calendars and get ready to be part of this global
-                      extravaganza as we count down to a new year filled with
-                      endless possibilities.
+                      Web-App zur digitalen Erfassung und Verwaltung von
+                      Arbeitszeiten. Fokus: JWT-Authentifizierung, rollenbasierte
+                      Rechte, QR-Code-Login und REST-API (React ↔ Symfony).
                     </p>
                   </h6>
                   <div
@@ -82,15 +80,17 @@ export default function Projects() {
                       fontWeight: 600,
                     }}
                   >
-                    HTML, CSS, JavaScript
+                    React, Symfony, REST-API, MySQL, JWT, TailwindCSS
                   </div>
                 </div>
               </Fade>
             </Col>
+
+            {/* --- Projekt 2: ShopEase --- */}
             <Col md={3}>
               <Fade bottom>
                 <div
-                  key={1}
+                  key={2}
                   className="singleProject"
                   style={{
                     backgroundColor: "rgb(142 70 186 / 31%)",
@@ -98,22 +98,20 @@ export default function Projects() {
                   }}
                 >
                   <div className="projectContent">
-                    <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                      Heart Disease Prediction
+                    <h5 id="shopEase" style={{ color: "#fbd9ad" }}>
+                      ShopEase – E-Commerce-Backend
                     </h5>
-                    <img src={hd} alt={hd} />
+                    <img src={shopEaseImage} alt="ShopEase" />
                     <div className="project--showcaseBtn">
                       <a
-                        href={
-                          "https://github.com/MD-MAFUJUL-HASAN/Machine_Learning/tree/main/Heart%20Disease%20Prediction"
-                        }
+                        href={"#"} // TODO: GitHub/Live-Link einfügen
                         target="_blank"
                         rel="noreferrer"
                         className={"iconBtn"}
-                        aria-labelledby={`code`}
+                        aria-labelledby={`code-shopease`}
                       >
                         <FaCode
-                          id={`code`}
+                          id={`code-shopease`}
                           className={"icon"}
                           aria-label="Code"
                         />
@@ -129,11 +127,8 @@ export default function Projects() {
                         fontWeight: 600,
                       }}
                     >
-                      Use of AI and Machine Learning: Artificial intelligence
-                      and machine learning are already being used in healthcare
-                      to help predict heart disease. In the future, these
-                      technologies could become more advanced, enabling more
-                      accurate predictions of heart disease risk.
+                      Skalierbares Backend für einen Online-Shop: Produkt-CRUD,
+                      Warenkorb-API, rollenbasierter Zugriff und API Platform.
                     </p>
                   </h6>
                   <div
@@ -144,15 +139,17 @@ export default function Projects() {
                       fontWeight: 600,
                     }}
                   >
-                    Pandas, Matplotlib, Scikit-Learn
+                    Symfony, API Platform, MySQL, JWT, Docker, Postman
                   </div>
                 </div>
               </Fade>
             </Col>
+
+            {/* --- Projekt 3: TaskFlow --- */}
             <Col md={3}>
               <Fade bottom>
                 <div
-                  key={1}
+                  key={3}
                   className="singleProject"
                   style={{
                     backgroundColor: "rgb(142 70 186 / 31%)",
@@ -160,22 +157,20 @@ export default function Projects() {
                   }}
                 >
                   <div className="projectContent">
-                    <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                      Online Payroll Management System
+                    <h5 id="taskFlow" style={{ color: "#fbd9ad" }}>
+                      TaskFlow – Aufgabenmanagement
                     </h5>
-                    <img src={ci} alt={ci} />
+                    <img src={taskFlowImage} alt="TaskFlow" />
                     <div className="project--showcaseBtn">
                       <a
-                        href={
-                          "https://github.com/MD-MAFUJUL-HASAN/Online-Payroll-Management-System"
-                        }
+                        href={"#"} // TODO: GitHub/Live-Link einfügen
                         target="_blank"
                         rel="noreferrer"
                         className={"iconBtn"}
-                        aria-labelledby={`code`}
+                        aria-labelledby={`code-taskflow`}
                       >
                         <FaCode
-                          id={`code`}
+                          id={`code-taskflow`}
                           className={"icon"}
                           aria-label="Code"
                         />
@@ -191,11 +186,9 @@ export default function Projects() {
                         fontWeight: 600,
                       }}
                     >
-                      A Payroll management System with feature like generate
-                      payslip & reports. It manages salaries, leaves, branches,
-                      employees, designations, shifts, holidays and employee
-                      attendance. It has chat application so internal employees
-                      can use that feature.
+                      Webbasiertes Kanban-Tool mit Drag & Drop, Statusmanagement
+                      und Echtzeit-Updates via WebSockets. Fokus auf Zustand-
+                      Management (Zustand) im Frontend.
                     </p>
                   </h6>
                   <div
@@ -206,17 +199,19 @@ export default function Projects() {
                       fontWeight: 600,
                     }}
                   >
-                    CSS, JavaScript, PHP, SCSS
+                    React, Node.js/Symfony API, MySQL, Zustand, WebSockets, TailwindCSS
                   </div>
                 </div>
               </Fade>
             </Col>
-          
+
+            {/* Fühle dich frei, weitere <Col md={3}> Blocks hinzuzufügen */}
           </Row>
+
           <div className="blog--viewAll">
             <Link to="/projectspage">
               <button className="btn btn-primary">
-                View All
+                Alle anzeigen
                 <HiArrowRight className="viewArr" />
               </button>
             </Link>
