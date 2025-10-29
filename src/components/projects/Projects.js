@@ -10,209 +10,99 @@ import timeTrackProImage from "../../images/nyc.png";
 import shopEaseImage from "../../images/hd.png";
 import taskFlowImage from "../../images/onboarding.png";
 
-
 export default function Projects() {
   return (
     <div>
-      <Container fluid className="certificate-section" id="about">
+      <Container fluid className="certificate-section" id="projects">
         <Container>
           <Row>
-            <Col
-              md={12}
-              className="certificate-description d-flex justify-content-start"
-            >
+            <Col md={12} className="certificate-description d-flex justify-content-start">
               <Zoom left cascade>
                 <h1 className="aboutme-heading">Projekte</h1>
               </Zoom>
             </Col>
 
             {/* --- Projekt 1: TimeTrackPro --- */}
-            <Col md={3}>
+            <Col md={4}>
               <Fade bottom>
-                <div
-                  key={1}
-                  className="singleProject"
-                  style={{
-                    backgroundColor: "rgb(142 70 186 / 31%)",
-                    border: "1px solid",
-                  }}
-                >
+                <div className="singleProject" style={{ backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
                   <div className="projectContent">
-                    <h5 id="timeTrackPro" style={{ color: "#fbd9ad" }}>
+                    <h5 className="project-title" style={{ color: "#fbd9ad" }}>
                       TimeTrackPro – Arbeitszeiterfassung
                     </h5>
-                    <img src={timeTrackProImage} alt="TimeTrackPro" />
+                    <img src={timeTrackProImage} alt="TimeTrackPro" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a
-                        href={"#"} // TODO: GitHub/Live-Link einfügen
-                        target="_blank"
-                        rel="noreferrer"
-                        className={"iconBtn"}
-                        aria-labelledby={`code-ttpro`}
-                      >
-                        <FaCode
-                          id={`code-ttpro`}
-                          className={"icon"}
-                          aria-label="Code"
-                        />
+                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-ttpro">
+                        <FaCode id="code-ttpro" className="icon" aria-label="Code" />
                       </a>
                     </div>
-                  </div>
-                  <h6>
-                    <p
-                      className="project--desc"
-                      style={{
-                        background: "#fbd9ad",
-                        color: "#b061df",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Web-App zur digitalen Erfassung und Verwaltung von
-                      Arbeitszeiten. Fokus: JWT-Authentifizierung, rollenbasierte
-                      Rechte, QR-Code-Login und REST-API (React ↔ Symfony).
+                    <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      Web-App zur Erfassung und Verwaltung von Arbeitszeiten mit JWT-Authentifizierung, Rollenverwaltung und REST-API.
                     </p>
-                  </h6>
-                  <div
-                    className="project--lang"
-                    style={{
-                      background: "#fbd9ad",
-                      color: "#b061df",
-                      fontWeight: 600,
-                    }}
-                  >
-                    React, Symfony, REST-API, MySQL, JWT, TailwindCSS
+                    <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      React · Symfony · REST-API · MySQL · JWT · TailwindCSS
+                    </div>
                   </div>
                 </div>
               </Fade>
             </Col>
 
             {/* --- Projekt 2: ShopEase --- */}
-            <Col md={3}>
+            <Col md={4}>
               <Fade bottom>
-                <div
-                  key={2}
-                  className="singleProject"
-                  style={{
-                    backgroundColor: "rgb(142 70 186 / 31%)",
-                    border: "1px solid",
-                  }}
-                >
+                <div className="singleProject" style={{ backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
                   <div className="projectContent">
-                    <h5 id="shopEase" style={{ color: "#fbd9ad" }}>
-                      ShopEase – E-Commerce-Backend
+                    <h5 className="project-title" style={{ color: "#fbd9ad" }}>
+                      ShopEase – E-Commerce Backend
                     </h5>
-                    <img src={shopEaseImage} alt="ShopEase" />
+                    <img src={shopEaseImage} alt="ShopEase" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a
-                        href={"#"} // TODO: GitHub/Live-Link einfügen
-                        target="_blank"
-                        rel="noreferrer"
-                        className={"iconBtn"}
-                        aria-labelledby={`code-shopease`}
-                      >
-                        <FaCode
-                          id={`code-shopease`}
-                          className={"icon"}
-                          aria-label="Code"
-                        />
+                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-shopease">
+                        <FaCode id="code-shopease" className="icon" aria-label="Code" />
                       </a>
                     </div>
-                  </div>
-                  <h6>
-                    <p
-                      className="project--desc"
-                      style={{
-                        background: "#fbd9ad",
-                        color: "#b061df",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Skalierbares Backend für einen Online-Shop: Produkt-CRUD,
-                      Warenkorb-API, rollenbasierter Zugriff und API Platform.
+                    <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      Skalierbares Shop-Backend mit Produktverwaltung, Warenkorb-API und rollenbasiertem Zugriff über API Platform.
                     </p>
-                  </h6>
-                  <div
-                    className="project--lang"
-                    style={{
-                      background: "#fbd9ad",
-                      color: "#b061df",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Symfony, API Platform, MySQL, JWT, Docker, Postman
+                    <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      Symfony · API Platform · MySQL · JWT · Docker · Postman
+                    </div>
                   </div>
                 </div>
               </Fade>
             </Col>
 
             {/* --- Projekt 3: TaskFlow --- */}
-            <Col md={3}>
+            <Col md={4}>
               <Fade bottom>
-                <div
-                  key={3}
-                  className="singleProject"
-                  style={{
-                    backgroundColor: "rgb(142 70 186 / 31%)",
-                    border: "1px solid",
-                  }}
-                >
+                <div className="singleProject" style={{ backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
                   <div className="projectContent">
-                    <h5 id="taskFlow" style={{ color: "#fbd9ad" }}>
+                    <h5 className="project-title" style={{ color: "#fbd9ad" }}>
                       TaskFlow – Aufgabenmanagement
                     </h5>
-                    <img src={taskFlowImage} alt="TaskFlow" />
+                    <img src={taskFlowImage} alt="TaskFlow" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a
-                        href={"#"} // TODO: GitHub/Live-Link einfügen
-                        target="_blank"
-                        rel="noreferrer"
-                        className={"iconBtn"}
-                        aria-labelledby={`code-taskflow`}
-                      >
-                        <FaCode
-                          id={`code-taskflow`}
-                          className={"icon"}
-                          aria-label="Code"
-                        />
+                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-taskflow">
+                        <FaCode id="code-taskflow" className="icon" aria-label="Code" />
                       </a>
                     </div>
-                  </div>
-                  <h6>
-                    <p
-                      className="project--desc"
-                      style={{
-                        background: "#fbd9ad",
-                        color: "#b061df",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Webbasiertes Kanban-Tool mit Drag & Drop, Statusmanagement
-                      und Echtzeit-Updates via WebSockets. Fokus auf Zustand-
-                      Management (Zustand) im Frontend.
+                    <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      Kanban-basiertes Tool mit Drag & Drop, Echtzeit-Updates via WebSockets und effizientem Zustand-Management.
                     </p>
-                  </h6>
-                  <div
-                    className="project--lang"
-                    style={{
-                      background: "#fbd9ad",
-                      color: "#b061df",
-                      fontWeight: 600,
-                    }}
-                  >
-                    React, Node.js/Symfony API, MySQL, Zustand, WebSockets, TailwindCSS
+                    <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      React · Node.js/Symfony API · MySQL · Zustand · WebSockets · TailwindCSS
+                    </div>
                   </div>
                 </div>
               </Fade>
             </Col>
-
-            {/* Fühle dich frei, weitere <Col md={3}> Blocks hinzuzufügen */}
           </Row>
 
-          <div className="blog--viewAll">
+          {/* View All Button */}
+          <div className="blog--viewAll text-center mt-4">
             <Link to="/projectspage">
               <button className="btn btn-primary">
-                Alle anzeigen
-                <HiArrowRight className="viewArr" />
+                Alle Projekte ansehen <HiArrowRight className="viewArr" />
               </button>
             </Link>
           </div>
