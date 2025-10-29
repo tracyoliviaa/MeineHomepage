@@ -2,222 +2,107 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Zoom from "react-reveal/Zoom";
 import { Fade } from "react-reveal";
-import nyc from "../../images/nyc.png";
-import ci from "../../images/onboarding.png";
-import hd from "../../images/hd.png";
-import pp from "../../images/portfolio.png";
 import { FaCode } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
 
+import timeTrackProImage from "../../images/nyc.png";
+import shopEaseImage from "../../images/hd.png";
+import taskFlowImage from "../../images/onboarding.png";
+
 export default function Projects() {
   return (
     <div>
-      <Container fluid className="certificate-section" id="about">
+      <Container fluid className="certificate-section" id="projects">
         <Container>
           <Row>
-            <Col
-              md={12}
-              className="certificate-description d-flex justify-content-start"
-            >
+            <Col md={12} className="certificate-description d-flex justify-content-start">
               <Zoom left cascade>
-                <h1 className="aboutme-heading">Projects</h1>
+                <h1 className="aboutme-heading">Projekte</h1>
               </Zoom>
             </Col>
-            <Col md={3}>
+
+            {/* --- Projekt 1: TimeTrackPro --- */}
+            <Col md={4}>
               <Fade bottom>
-                <div
-                  key={1}
-                  className="singleProject"
-                  style={{
-                    backgroundColor: "rgb(142 70 186 / 31%)",
-                    border: "1px solid",
-                  }}
-                >
+                <div className="singleProject" style={{ backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
                   <div className="projectContent">
-                    <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                      New Year CountDown
+                    <h5 className="project-title" style={{ color: "#fbd9ad" }}>
+                      TimeTrackPro – Arbeitszeiterfassung
                     </h5>
-                    <img src={nyc} alt={nyc} />
+                    <img src={timeTrackProImage} alt="TimeTrackPro" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a
-                        href={
-                          "https://github.com/MD-MAFUJUL-HASAN/Web_Programming/tree/main/New-Year-Countdown"
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                        className={"iconBtn"}
-                        aria-labelledby={`code`}
-                      >
-                        <FaCode
-                          id={`code`}
-                          className={"icon"}
-                          aria-label="Code"
-                        />
+                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-ttpro">
+                        <FaCode id="code-ttpro" className="icon" aria-label="Code" />
                       </a>
                     </div>
-                  </div>
-                  <h6>
-                    <p
-                      className="project--desc"
-                      style={{
-                        background: "#fbd9ad",
-                        color: "#b061df",
-                        fontWeight: 600,
-                      }}
-                    >
-                      The New Year Countdown Project is more than just a
-                      celebration; it's a testament to the human spirit and our
-                      shared aspirations for a brighter future. So, mark your
-                      calendars and get ready to be part of this global
-                      extravaganza as we count down to a new year filled with
-                      endless possibilities.
+                    <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      Web-App zur Erfassung und Verwaltung von Arbeitszeiten mit JWT-Authentifizierung, Rollenverwaltung und REST-API.
                     </p>
-                  </h6>
-                  <div
-                    className="project--lang"
-                    style={{
-                      background: "#fbd9ad",
-                      color: "#b061df",
-                      fontWeight: 600,
-                    }}
-                  >
-                    HTML, CSS, JavaScript
+                    <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      React · Symfony · REST-API · MySQL · JWT · TailwindCSS
+                    </div>
                   </div>
                 </div>
               </Fade>
             </Col>
-            <Col md={3}>
+
+            {/* --- Projekt 2: ShopEase --- */}
+            <Col md={4}>
               <Fade bottom>
-                <div
-                  key={1}
-                  className="singleProject"
-                  style={{
-                    backgroundColor: "rgb(142 70 186 / 31%)",
-                    border: "1px solid",
-                  }}
-                >
+                <div className="singleProject" style={{ backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
                   <div className="projectContent">
-                    <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                      Heart Disease Prediction
+                    <h5 className="project-title" style={{ color: "#fbd9ad" }}>
+                      ShopEase – E-Commerce Backend
                     </h5>
-                    <img src={hd} alt={hd} />
+                    <img src={shopEaseImage} alt="ShopEase" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a
-                        href={
-                          "https://github.com/MD-MAFUJUL-HASAN/Machine_Learning/tree/main/Heart%20Disease%20Prediction"
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                        className={"iconBtn"}
-                        aria-labelledby={`code`}
-                      >
-                        <FaCode
-                          id={`code`}
-                          className={"icon"}
-                          aria-label="Code"
-                        />
+                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-shopease">
+                        <FaCode id="code-shopease" className="icon" aria-label="Code" />
                       </a>
                     </div>
-                  </div>
-                  <h6>
-                    <p
-                      className="project--desc"
-                      style={{
-                        background: "#fbd9ad",
-                        color: "#b061df",
-                        fontWeight: 600,
-                      }}
-                    >
-                      Use of AI and Machine Learning: Artificial intelligence
-                      and machine learning are already being used in healthcare
-                      to help predict heart disease. In the future, these
-                      technologies could become more advanced, enabling more
-                      accurate predictions of heart disease risk.
+                    <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      Skalierbares Shop-Backend mit Produktverwaltung, Warenkorb-API und rollenbasiertem Zugriff über API Platform.
                     </p>
-                  </h6>
-                  <div
-                    className="project--lang"
-                    style={{
-                      background: "#fbd9ad",
-                      color: "#b061df",
-                      fontWeight: 600,
-                    }}
-                  >
-                    Pandas, Matplotlib, Scikit-Learn
+                    <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      Symfony · API Platform · MySQL · JWT · Docker · Postman
+                    </div>
                   </div>
                 </div>
               </Fade>
             </Col>
-            <Col md={3}>
+
+            {/* --- Projekt 3: TaskFlow --- */}
+            <Col md={4}>
               <Fade bottom>
-                <div
-                  key={1}
-                  className="singleProject"
-                  style={{
-                    backgroundColor: "rgb(142 70 186 / 31%)",
-                    border: "1px solid",
-                  }}
-                >
+                <div className="singleProject" style={{ backgroundColor: "rgb(142 70 186 / 31%)", border: "1px solid" }}>
                   <div className="projectContent">
-                    <h5 id={"first"} style={{ color: "#fbd9ad" }}>
-                      Online Payroll Management System
+                    <h5 className="project-title" style={{ color: "#fbd9ad" }}>
+                      TaskFlow – Aufgabenmanagement
                     </h5>
-                    <img src={ci} alt={ci} />
+                    <img src={taskFlowImage} alt="TaskFlow" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a
-                        href={
-                          "https://github.com/MD-MAFUJUL-HASAN/Online-Payroll-Management-System"
-                        }
-                        target="_blank"
-                        rel="noreferrer"
-                        className={"iconBtn"}
-                        aria-labelledby={`code`}
-                      >
-                        <FaCode
-                          id={`code`}
-                          className={"icon"}
-                          aria-label="Code"
-                        />
+                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-taskflow">
+                        <FaCode id="code-taskflow" className="icon" aria-label="Code" />
                       </a>
                     </div>
-                  </div>
-                  <h6>
-                    <p
-                      className="project--desc"
-                      style={{
-                        background: "#fbd9ad",
-                        color: "#b061df",
-                        fontWeight: 600,
-                      }}
-                    >
-                      A Payroll management System with feature like generate
-                      payslip & reports. It manages salaries, leaves, branches,
-                      employees, designations, shifts, holidays and employee
-                      attendance. It has chat application so internal employees
-                      can use that feature.
+                    <p className="project--desc" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      Kanban-basiertes Tool mit Drag & Drop, Echtzeit-Updates via WebSockets und effizientem Zustand-Management.
                     </p>
-                  </h6>
-                  <div
-                    className="project--lang"
-                    style={{
-                      background: "#fbd9ad",
-                      color: "#b061df",
-                      fontWeight: 600,
-                    }}
-                  >
-                    CSS, JavaScript, PHP, SCSS
+                    <div className="project--lang" style={{ background: "#fbd9ad", color: "#b061df", fontWeight: 600 }}>
+                      React · Node.js/Symfony API · MySQL · Zustand · WebSockets · TailwindCSS
+                    </div>
                   </div>
                 </div>
               </Fade>
             </Col>
-          
           </Row>
-          <div className="blog--viewAll">
+
+          {/* View All Button */}
+          <div className="blog--viewAll text-center mt-4">
             <Link to="/projectspage">
               <button className="btn btn-primary">
-                View All
-                <HiArrowRight className="viewArr" />
+                Alle Projekte ansehen <HiArrowRight className="viewArr" />
               </button>
             </Link>
           </div>

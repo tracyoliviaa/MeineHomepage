@@ -35,7 +35,7 @@ function EducationJourney() {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
           contentArrowStyle={{ borderRight: "7px solid  rgb(78 22 112)" }}
-          date="2022 --2024"
+          date="2022 --2025"
           iconStyle={{ background: "rgb(78 22 112)", color: "#fbd9ad" }}
           icon={<SchoolIcon />}
         >

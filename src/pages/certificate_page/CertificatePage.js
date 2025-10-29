@@ -142,6 +142,64 @@ export default function CertificatePage() {
                           </Fade>
                         </Col>
                        
+<Col md={4} className="col-sm-12 col-md4">
+    <Fade bottom duration={2000} distance="20px">
+        <div className="cert-card">
+            <div className="content">
+                {/* 1. ANKER-TAG (LINK ZUM ZERTIFIKAT) */}
+                <a
+                    // HIER KOMMT DER IMPORT-NAME HINEIN, z.B. {zertifikatEins}
+                    href="https://www.hackerrank.com/certificates/02cf34962bf9" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    <div className="content-overlay"></div>
+                    <div
+                        className="cert-header"
+                        style={{ backgroundColor: "white" }}
+                    >
+                        {
+                            // 2. LOGO/BILD, DAS AUF DER KARTE SICHTBAR IST
+                            <img
+                                className="logo_img"
+                                src={ucsc} // HIER DER IMPORT-NAME FÜR DAS LOGO, z.B. {skill}
+                                alt={ucsc}
+                            />
+                        }
+                    </div>
+                    {/* HIER DIE TEXTÜBERSCHRIFT, DIE BEIM HOVERN ERSCHEINT */}
+                    <div className="content-details fadeIn-top">
+                        <h3
+                            className="content-title"
+                            style={{ color: "black" }}
+                        >
+                            Certificate
+                        </h3>
+                    </div>
+                </a>
+            </div>
+            {/* 3. TEXT-KARTE UNTER DEM BILD */}
+            <div className="cert-body">
+                <h2
+                    className="cert-body-title"
+                    style={{ fontWeight: 700, color: "#fbd9ad" }}
+                >
+                    SQL Basic : Querying and managing data // HIER ZERTIFIKAT-TITEL
+                </h2>
+                <h3
+                    className="cert-body-subtitle"
+                    style={{
+                        color: "#eb90ff",
+                        marginBottom: "0px",
+                    }}
+                >
+                    - HackerRank // HIER ZERTIFIKAT-AUSSTELLER
+                </h3>
+            </div>
+        </div>
+    </Fade>
+</Col>
+
                        
                       </Row>
                     </Col>

@@ -61,6 +61,14 @@ export default function Certificate() {
                 style={{ width: "100%", height: "100%" }}
               />
             </Col>
+
+            
+
+
+            
+
+
+            
           </Row>
           {/* </Bounce> */}
         </Fade>
