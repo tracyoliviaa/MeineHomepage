@@ -11,6 +11,10 @@ import { FaLinkedinIn, FaGoogle } from "react-icons/fa";
 import Certification from "../../components/certificate/Certification";
 import Projects from "../../components/projects/Projects";
 import Contactus from "../../components/contactus/Contactus";
+import profileImg from "../../assets/profile.jpg"; // adjust path as needed
+
+
+
 
 export default function Home() {
   return (
@@ -104,10 +108,10 @@ export default function Home() {
               <Tilt>
                 <div className="image-frame-professional">
                   <img
-                    src="./profile.jpg"
-                    alt="Martina Schulz - Software Developer"
-                    className="img-fluid"
-                  />
+                  src={profileImg}
+  alt="Martina Schulz - Software Developer"
+  className="img-fluid"
+/>
                 </div>
               </Tilt>
             </Fade>
