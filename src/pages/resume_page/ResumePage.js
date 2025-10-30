@@ -3,13 +3,13 @@ import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { AiOutlineDownload } from "react-icons/ai";
 import Particle from "../../Particle";
-import pdf from "../../assets/Lebenslauf  Martina Schulz.pdf";
 import { Document, Page, pdfjs } from "react-pdf";
-import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import Zoom from "react-reveal/Zoom";
 
 // Ensure PDF.js worker is set up correctly
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
+
+const pdf = process.env.PUBLIC_URL + '/Lebenslauf  Martina Schulz.pdf';
 
 function Resume() {
   const [width, setWidth] = useState(1200);
@@ -24,11 +24,7 @@ function Resume() {
         <Container fluid id="home">
           <Particle />
           <Container className="home-content">
-            <div
-              className="d-flex justify-content-center"
-              width="100%"
-              style={{ backgroundColor: "#fbd9ad" }}
-            >
+            <div className="d-flex justify-content-center" width="100%" style={{ backgroundColor: "#fbd9ad" }}>
               <Zoom left cascade>
                 <h1 style={{ color: "rgb(134 61 176)" }}>RESUME</h1>
               </Zoom>
