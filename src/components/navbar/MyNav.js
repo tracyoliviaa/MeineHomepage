@@ -9,8 +9,9 @@ import {
   AiOutlineFundProjectionScreen,
 } from "react-icons/ai";
 import { FaBlog } from "react-icons/fa";
-import "../../style.css";
 import { CgFileDocument } from "react-icons/cg";
+import "../../style.css";
+
 export default function MyNav() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
@@ -30,39 +31,84 @@ export default function MyNav() {
       expanded={expand}
       fixed="top"
       expand="md"
-      className={navColour ? "sticky" : "navbar"}
+      className={navColour ? "navbar-professional sticky" : "navbar-professional"}
+      style={{
+        background: navColour 
+          ? 'rgba(10, 10, 10, 0.95)' 
+          : 'transparent',
+        backdropFilter: navColour ? 'blur(10px)' : 'none',
+        transition: 'all 0.3s ease',
+        borderBottom: navColour ? '1px solid rgba(142, 70, 186, 0.2)' : 'none',
+        padding: '16px 0'
+      }}
     >
       <Container>
-        <Navbar.Brand href="/">
-          <div className="d-flex flex-row justify-content-between">
-            <img src="./profile.jpg" className="img-fluid logo" alt="brand" />
-            <h5
-              id="navhead"
+        <Navbar.Brand href="/" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div className="logo-wrapper-professional">
+            <img 
+              src="./profile.jpg" 
+              className="img-fluid" 
+              alt="Martina Schulz" 
               style={{
-                marginLeft: "21px",
-                paddingTop: "6px",
-                color: "#fbd9ad",
+                width: '50px',
+                height: '50px',
+                borderRadius: '50%',
+                border: '2px solid #8e46ba',
+                objectFit: 'cover',
+                transition: 'transform 0.3s ease'
               }}
-            >
-              Martina Schulz
-            </h5>
+              onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
+              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+            />
           </div>
+          <h5
+            style={{
+              margin: 0,
+              color: "#fbd9ad",
+              fontWeight: 700,
+              fontSize: '18px',
+              letterSpacing: '0.5px'
+            }}
+          >
+            Martina Schulz
+          </h5>
         </Navbar.Brand>
+
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
             updateExpanded(expand ? false : "expanded");
+          }}
+          style={{
+            border: '2px solid #8e46ba',
+            borderRadius: '8px'
           }}
         >
           <span></span>
           <span></span>
           <span></span>
         </Navbar.Toggle>
+
         <Navbar.Collapse id="responsive-navbar-nav" className="navbarmain">
-          <Nav className="ml-auto" defaultActiveKey="#home">
+          <Nav className="ml-auto" defaultActiveKey="#home" style={{ gap: '8px' }}>
             <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => updateExpanded(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
+              <Nav.Link 
+                as={Link} 
+                to="/" 
+                onClick={() => updateExpanded(false)}
+                className="nav-link-professional"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '10px 18px',
+                  borderRadius: '8px',
+                  transition: 'all 0.3s ease',
+                  fontWeight: 600,
+                  fontSize: '15px'
+                }}
+              >
+                <AiOutlineHome style={{ fontSize: '18px' }} /> Home
               </Nav.Link>
             </Nav.Item>
 
@@ -71,11 +117,19 @@ export default function MyNav() {
                 as={Link}
                 to="/projectspage"
                 onClick={() => updateExpanded(false)}
+                className="nav-link-professional"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '10px 18px',
+                  borderRadius: '8px',
+                  transition: 'all 0.3s ease',
+                  fontWeight: 600,
+                  fontSize: '15px'
+                }}
               >
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
+                <AiOutlineFundProjectionScreen style={{ fontSize: '18px' }} /> Projects
               </Nav.Link>
             </Nav.Item>
 
@@ -84,8 +138,19 @@ export default function MyNav() {
                 as={Link}
                 to="/resume"
                 onClick={() => updateExpanded(false)}
+                className="nav-link-professional"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '10px 18px',
+                  borderRadius: '8px',
+                  transition: 'all 0.3s ease',
+                  fontWeight: 600,
+                  fontSize: '15px'
+                }}
               >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <CgFileDocument style={{ fontSize: '18px' }} /> Resume
               </Nav.Link>
             </Nav.Item>
 
@@ -94,8 +159,19 @@ export default function MyNav() {
                 as={Link}
                 to="/certificatepage"
                 onClick={() => updateExpanded(false)}
+                className="nav-link-professional"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '10px 18px',
+                  borderRadius: '8px',
+                  transition: 'all 0.3s ease',
+                  fontWeight: 600,
+                  fontSize: '15px'
+                }}
               >
-                <ImBlog style={{ marginBottom: "2px" }} /> Certifications
+                <ImBlog style={{ fontSize: '18px' }} /> Certifications
               </Nav.Link>
             </Nav.Item>
 
@@ -104,19 +180,37 @@ export default function MyNav() {
                 as={Link}
                 to="/blogs"
                 onClick={() => updateExpanded(false)}
+                className="nav-link-professional"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  padding: '10px 18px',
+                  borderRadius: '8px',
+                  transition: 'all 0.3s ease',
+                  fontWeight: 600,
+                  fontSize: '15px'
+                }}
               >
-                <FaBlog style={{ marginBottom: "2px" }} /> Blogs
+                <FaBlog style={{ fontSize: '18px' }} /> Blogs
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item className="fork-btn">
+            <Nav.Item className="fork-btn" style={{ marginLeft: '8px' }}>
               <Button
-                href=""
+                href="https://github.com/tracyolivia"
                 target="_blank"
-                className="fork-btn-inner"
+                className="btn-professional btn-primary-professional"
+                style={{
+                  padding: '10px 20px',
+                  fontSize: '14px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
               >
-                <CgGitFork style={{ fontSize: "1.2em" }} />{" "}
-                <AiFillStar style={{ fontSize: "1.1em" }} />
+                <CgGitFork style={{ fontSize: '18px' }} />
+                <AiFillStar style={{ fontSize: '16px' }} />
               </Button>
             </Nav.Item>
           </Nav>
