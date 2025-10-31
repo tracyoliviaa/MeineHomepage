@@ -1,17 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-<<<<<<< HEAD
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn, FaHeart } from "react-icons/fa";
-=======
-import { AiFillGithub, AiFillInstagram } from "react-icons/ai";
-import { FaLinkedinIn, FaFacebookF, FaGoogle } from "react-icons/fa";
->>>>>>> origin/main
 
 function Footer() {
   let date = new Date();
   let year = date.getFullYear();
-<<<<<<< HEAD
 
   return (
     <footer style={{
@@ -184,74 +178,3 @@ function Footer() {
 }
 
 export default Footer;
-=======
-  return (
-    <Container fluid className="footer">
-      <Row>
-        <Col md="4" className="footer-copywright">
-          <h3>Designed and Developed by Martina</h3>
-        </Col>
-        <Col md="4" className="footer-copywright">
-          <h3>Copyright © {year} Martina</h3>
-        </Col>
-        <Col md="4" className="footer-body">
-          <ul className="footer-icons">
-            <li className="social-icons">
-              <a
-                href="https://github.com/MD-MAFUJUL-HASAN"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillGithub />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="https://www.linkedin.com/in/martina-schulz/"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaLinkedinIn />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href=""
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <AiFillInstagram />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href=""
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaFacebookF />
-              </a>
-            </li>
-            <li className="social-icons">
-              <a
-                href="mailto:m-o-schulz@web.de/"
-                style={{ color: "white" }}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <FaGoogle />
-              </a>
-            </li>
-          </ul>
-        </Col>
-      </Row>
-    </Container>
-  );
-}
-
-export default Footer;
->>>>>>> origin/main
