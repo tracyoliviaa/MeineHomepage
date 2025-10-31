@@ -61,11 +61,5 @@
   },
   "devDependencies": {
     "gh-pages": "^6.3.0"
-  },
-  "overrides": {
-    "react-reveal": {
-      "react": "^18.2.0",
-      "react-dom": "^18.2.0"
-    }
   }
 }

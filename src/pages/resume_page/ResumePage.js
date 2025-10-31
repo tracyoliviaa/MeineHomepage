@@ -3,6 +3,10 @@ import { Container } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { AiOutlineDownload } from "react-icons/ai";
 import Particle from "../../Particle";
+<<<<<<< HEAD
+=======
+import pdf from "../../assets/Lebenslauf  Martina Schulz.pdf";
+>>>>>>> origin/main
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import Zoom from "react-reveal/Zoom";
@@ -12,6 +16,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 
 function Resume() {
   const [width, setWidth] = useState(1200);
+<<<<<<< HEAD
   const [numPages, setNumPages] = useState(null);
   
   // PDF path - works for both local and production
@@ -38,6 +43,13 @@ function Resume() {
     console.log('Tried to load from:', pdf);
   }
 
+=======
+
+  useEffect(() => {
+    setWidth(window.innerWidth);
+  }, []);
+
+>>>>>>> origin/main
   return (
     <div>
       <section className="home-section">
@@ -46,6 +58,7 @@ function Resume() {
           <Container className="home-content">
             <div
               className="d-flex justify-content-center"
+<<<<<<< HEAD
               style={{
                 backgroundColor: "#fbd9ad",
                 padding: "20px 0",
@@ -155,6 +168,31 @@ function Resume() {
                 >
                   <AiOutlineDownload size={20} />
                   Download Resume
+=======
+              width="100%"
+              style={{ backgroundColor: "#fbd9ad" }}
+            >
+              <Zoom left cascade>
+                <h1 style={{ color: "rgb(134 61 176)" }}>RESUME</h1>
+              </Zoom>
+            </div>
+            <div fluid className="certificate-section" id="about">
+              <div className="d-flex justify-content-center mt-4">
+                <Button variant="primary" href={pdf} target="_blank">
+                  <AiOutlineDownload />
+                  &nbsp;Download Resume
+                </Button>
+              </div>
+              <div className="resume d-flex justify-content-center">
+                <Document file={pdf}>
+                  <Page pageNumber={1} scale={width > 786 ? 1.6 : 0.4} />
+                </Document>
+              </div>
+              <div className="d-flex justify-content-center">
+                <Button variant="primary" href={pdf} target="_blank">
+                  <AiOutlineDownload />
+                  &nbsp;Download Resume
+>>>>>>> origin/main
                 </Button>
               </div>
             </div>
@@ -165,4 +203,8 @@ function Resume() {
   );
 }
 
+<<<<<<< HEAD
 export default Resume;
+=======
+export default Resume;
+>>>>>>> origin/main

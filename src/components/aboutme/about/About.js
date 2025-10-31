@@ -38,8 +38,13 @@ const About = () => {
           <Fade right duration={1200} delay={200}>
             <div className="about-text-professional">
               <p>
+<<<<<<< HEAD
                 Mein Name ist <span className="purple">Martina Schulz</span> und ich bin 
                 <span className="purple"> Fachinformatikerin für Anwendungsentwicklung</span>.
+=======
+                Mein Name ist <span className="purple">Martina Schulz</span> und ich studiere  
+                <span className="purple"> Informatik</span> an der <span className="purple">SRH</span> in Heidelberg.
+>>>>>>> origin/main
               </p>
               
               <p>
@@ -54,7 +59,11 @@ const About = () => {
               
               <p>
                 In meiner Freizeit entwickle ich gerne neue Technologien und 
+<<<<<<< HEAD
                 <span className="purple"> baue moderne Webanwendungen</span>.
+=======
+                <span className="purple"> baue neue Webanwendungen</span>.
+>>>>>>> origin/main
               </p>
             </div>
           </Fade>
@@ -64,4 +73,8 @@ const About = () => {
   );
 };
 
+<<<<<<< HEAD
 export default About;
+=======
+export default About;
+>>>>>>> origin/main
