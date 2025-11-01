@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MeineHomepage/static/css/main.c8c6940e.css",
-    "main.js": "/MeineHomepage/static/js/main.d1fdce54.js",
+    "main.css": "/MeineHomepage/static/css/main.8b52b0ea.css",
+    "main.js": "/MeineHomepage/static/js/main.261a2620.js",
     "static/js/768.6175eaf5.chunk.js": "/MeineHomepage/static/js/768.6175eaf5.chunk.js",
     "static/media/nyc.png": "/MeineHomepage/static/media/nyc.139298242835d62facd4.png",
     "static/media/meal.png": "/MeineHomepage/static/media/meal.8d0faeffa0fc80c3ca8c.png",
@@ -18,12 +18,12 @@
     "static/media/h3.jpg": "/MeineHomepage/static/media/h3.dc52d5d40a40b13154b0.jpg",
     "static/media/chorme.svg": "/MeineHomepage/static/media/chorme.b0bd08e3d4226484ce842d3453b979e9.svg",
     "index.html": "/MeineHomepage/index.html",
-    "main.c8c6940e.css.map": "/MeineHomepage/static/css/main.c8c6940e.css.map",
-    "main.d1fdce54.js.map": "/MeineHomepage/static/js/main.d1fdce54.js.map",
+    "main.8b52b0ea.css.map": "/MeineHomepage/static/css/main.8b52b0ea.css.map",
+    "main.261a2620.js.map": "/MeineHomepage/static/js/main.261a2620.js.map",
     "768.6175eaf5.chunk.js.map": "/MeineHomepage/static/js/768.6175eaf5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c8c6940e.css",
-    "static/js/main.d1fdce54.js"
+    "static/css/main.8b52b0ea.css",
+    "static/js/main.261a2620.js"
   ]
 }
