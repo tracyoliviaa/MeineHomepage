@@ -32,7 +32,13 @@ export default function Projects() {
                     </h5>
                     <img src={timeTrackProImage} alt="TimeTrackPro" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-ttpro">
+                      <a 
+                        href="https://github.com" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="iconBtn" 
+                        aria-labelledby="code-ttpro"
+                      >
                         <FaCode id="code-ttpro" className="icon" aria-label="Code" />
                       </a>
                     </div>
@@ -57,7 +63,13 @@ export default function Projects() {
                     </h5>
                     <img src={shopEaseImage} alt="ShopEase" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-shopease">
+                      <a 
+                        href="https://github.com" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="iconBtn" 
+                        aria-labelledby="code-shopease"
+                      >
                         <FaCode id="code-shopease" className="icon" aria-label="Code" />
                       </a>
                     </div>
@@ -82,7 +94,13 @@ export default function Projects() {
                     </h5>
                     <img src={taskFlowImage} alt="TaskFlow" className="project-image" />
                     <div className="project--showcaseBtn">
-                      <a href="#" target="_blank" rel="noreferrer" className="iconBtn" aria-labelledby="code-taskflow">
+                      <a 
+                        href="https://github.com" 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="iconBtn" 
+                        aria-labelledby="code-taskflow"
+                      >
                         <FaCode id="code-taskflow" className="icon" aria-label="Code" />
                       </a>
                     </div>
