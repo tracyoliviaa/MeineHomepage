@@ -2,7 +2,7 @@
   "name": "martina-portfolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://meinehomepage.vercel.app/",
+  "homepage": "./",
   "description": "Professional Portfolio Website for Martina Schulz - Software Developer",
   "author": "Martina Schulz",
   "license": "MIT",
@@ -21,13 +21,16 @@
     "pdfjs-dist": "^3.11.174",
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
+    "react-circle": "^1.1.1",
     "react-dom": "^18.2.0",
     "react-icons": "^5.1.0",
     "react-parallax-tilt": "^1.7.223",
     "react-pdf": "^7.7.3",
     "react-reveal": "^1.2.2",
+    "react-router-bootstrap": "^0.26.0",
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
+    "react-tsparticles": "^2.12.2",
     "react-vertical-timeline-component": "^3.6.0",
     "typewriter-effect": "^2.21.0",
     "web-vitals": "^3.5.2"
@@ -38,8 +41,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "clean": "rm -rf node_modules package-lock.json build"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
