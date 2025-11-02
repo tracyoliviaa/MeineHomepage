@@ -38,8 +38,8 @@ const About = () => {
           <Fade right duration={1200} delay={200}>
             <div className="about-text-professional">
               <p>
-                Mein Name ist <span className="purple">Martina Schulz</span> und ich studiere  
-                <span className="purple"> Informatik</span> an der <span className="purple">SRH</span> in Heidelberg.
+                Mein Name ist <span className="purple">Martina Schulz</span> und ich bin 
+                <span className="purple"> Fachinformatikerin für Anwendungsentwicklung</span>.
               </p>
               
               <p>
@@ -54,7 +54,7 @@ const About = () => {
               
               <p>
                 In meiner Freizeit entwickle ich gerne neue Technologien und 
-                <span className="purple"> baue neue Webanwendungen</span>.
+                <span className="purple"> baue moderne Webanwendungen</span>.
               </p>
             </div>
           </Fade>

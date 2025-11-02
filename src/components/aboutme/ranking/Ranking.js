@@ -1,11 +1,5 @@
 import React from "react";
 import { FaHackerrank } from "react-icons/fa";
-import {
-  SiLeetcode,
-  SiHackerearth,
-  SiCodechef,
-  SiCodeforces,
-} from "react-icons/si";
 import { Container, Row } from "react-bootstrap";
 import { Col } from "react-bootstrap";
 import Zoom from "react-reveal/Zoom";
@@ -38,10 +32,10 @@ export default function Ranking() {
               className="icon-colour  home-social-icons"
             >
               <Zoom cascade>
-                <SiCodeforces />
+                {/* Icon displays here */}
               </Zoom>
             </a>
-          </Col>{" "}
+          </Col>
         </Row>
       </Container>
     </div>
