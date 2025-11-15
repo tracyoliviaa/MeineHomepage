@@ -3,16 +3,13 @@ import { Container, Row, Col } from "react-bootstrap";
 import Zoom from "react-reveal/Zoom";
 import { Fade } from "react-reveal";
 import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { HiArrowRight } from "react-icons/hi";
+import Particle from "../../Particle";
 
-// You'll need to add project screenshots to your images folder
-// For now, using placeholders
 import knowledgeFlowImage from "../../images/nyc.png";
 import coreMapImage from "../../images/hd.png";
 import dailyMindImage from "../../images/onboarding.png";
 
-export default function Projects() {
+export default function ProjectPage() {
   const projects = [
     {
       title: "KnowledgeFlow – Deine persönliche Wissensdatenbank",
@@ -70,215 +67,219 @@ export default function Projects() {
   };
 
   return (
-    <div>
-      <Container fluid className="certificate-section" id="projects">
-        <Container>
-          <Row>
-            <Col md={12} className="certificate-description d-flex justify-content-start">
-              <Zoom left cascade>
-                <h1 className="aboutme-heading">Projekte</h1>
-              </Zoom>
-            </Col>
+    <section className="home-section">
+      <Container fluid id="home">
+        <Particle />
+        <Container className="home-content">
+          <div
+            className="d-flex justify-content-center"
+            style={{
+              backgroundColor: "#fbd9ad",
+              padding: "20px 0",
+              borderRadius: "12px",
+              marginTop: "80px",
+            }}
+          >
+            <Zoom left cascade>
+              <h1 style={{ color: "rgb(134 61 176)", margin: 0 }}>ALLE PROJEKTE</h1>
+            </Zoom>
+          </div>
 
-            {projects.map((project, index) => (
-              <Col md={4} key={index}>
-                <Fade bottom>
-                  <div 
-                    className="singleProject" 
-                    style={{ 
-                      backgroundColor: "rgb(142 70 186 / 31%)", 
-                      border: "1px solid",
-                      position: "relative",
-                      minHeight: "520px"
-                    }}
-                  >
-                    <div className="projectContent">
-                      <div style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        alignItems: "flex-start",
-                        marginBottom: "12px"
-                      }}>
-                        <h5 
-                          className="project-title" 
+          <div className="mt-5">
+            <Container fluid className="certificate-section">
+              <Container>
+                <Row className="g-5">
+                  {projects.map((project, index) => (
+                    <Col md={4} key={index}>
+                      <Fade bottom>
+                        <div 
+                          className="singleProject" 
                           style={{ 
-                            color: "#fbd9ad",
-                            margin: 0,
-                            flex: 1,
-                            display: "flex",
-                            alignItems: "center",
-                            gap: "8px"
+                            backgroundColor: "rgb(142 70 186 / 31%)", 
+                            border: "1px solid",
+                            position: "relative",
+                            minHeight: "520px"
                           }}
                         >
-                          <span style={{ fontSize: "24px" }}>{project.emoji}</span>
-                          {project.title.split('–')[0]}
-                        </h5>
-                        {getStatusBadge(project.status)}
-                      </div>
-
-                      <p style={{
-                        color: "#eb90ff",
-                        fontSize: "13px",
-                        marginBottom: "12px",
-                        fontWeight: "600"
-                      }}>
-                        {project.title.split('–')[1]}
-                      </p>
-
-                      <img 
-                        src={project.image} 
-                        alt={project.title} 
-                        className="project-image"
-                        style={{
-                          width: "100%",
-                          height: "180px",
-                          objectFit: "cover",
-                          borderRadius: "8px",
-                          marginBottom: "16px"
-                        }}
-                      />
-
-                      <div style={{
-                        display: "flex",
-                        gap: "12px",
-                        marginBottom: "16px"
-                      }}>
-                        {/* GitHub Link */}
-                        <a 
-                          href={project.github} 
-                          target="_blank" 
-                          rel="noreferrer" 
-                          style={{
-                            flex: 1,
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            gap: "6px",
-                            padding: "10px",
-                            background: "rgba(251, 217, 173, 0.1)",
-                            border: "1px solid rgba(251, 217, 173, 0.3)",
-                            borderRadius: "8px",
-                            color: "#fbd9ad",
-                            textDecoration: "none",
-                            transition: "all 0.3s ease",
-                            fontSize: "14px",
-                            fontWeight: "600"
-                          }}
-                          onMouseEnter={(e) => {
-                            e.currentTarget.style.background = "rgba(251, 217, 173, 0.2)";
-                            e.currentTarget.style.borderColor = "#fbd9ad";
-                          }}
-                          onMouseLeave={(e) => {
-                            e.currentTarget.style.background = "rgba(251, 217, 173, 0.1)";
-                            e.currentTarget.style.borderColor = "rgba(251, 217, 173, 0.3)";
-                          }}
-                        >
-                          <FaCode /> Code
-                        </a>
-
-                        {/* Demo Link */}
-                        {project.status === "live" && project.demo ? (
-                          <a 
-                            href={project.demo} 
-                            target="_blank" 
-                            rel="noreferrer"
-                            style={{
-                              flex: 1,
+                          <div className="projectContent">
+                            <div style={{
                               display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              gap: "6px",
-                              padding: "10px",
-                              background: "linear-gradient(135deg, #8e46ba, #b061df)",
-                              border: "none",
-                              borderRadius: "8px",
-                              color: "#fff",
-                              textDecoration: "none",
-                              transition: "all 0.3s ease",
-                              fontSize: "14px",
+                              justifyContent: "space-between",
+                              alignItems: "flex-start",
+                              marginBottom: "12px"
+                            }}>
+                              <h5 
+                                className="project-title" 
+                                style={{ 
+                                  color: "#fbd9ad",
+                                  margin: 0,
+                                  flex: 1,
+                                  display: "flex",
+                                  alignItems: "center",
+                                  gap: "8px"
+                                }}
+                              >
+                                <span style={{ fontSize: "24px" }}>{project.emoji}</span>
+                                {project.title.split('–')[0]}
+                              </h5>
+                              {getStatusBadge(project.status)}
+                            </div>
+
+                            <p style={{
+                              color: "#eb90ff",
+                              fontSize: "13px",
+                              marginBottom: "12px",
                               fontWeight: "600"
-                            }}
-                            onMouseEnter={(e) => {
-                              e.currentTarget.style.transform = "translateY(-2px)";
-                              e.currentTarget.style.boxShadow = "0 4px 12px rgba(142, 70, 186, 0.4)";
-                            }}
-                            onMouseLeave={(e) => {
-                              e.currentTarget.style.transform = "translateY(0)";
-                              e.currentTarget.style.boxShadow = "none";
-                            }}
-                          >
-                            <FaExternalLinkAlt /> Demo
-                          </a>
-                        ) : (
-                          <button
-                            disabled
-                            style={{
-                              flex: 1,
+                            }}>
+                              {project.title.split('–')[1]}
+                            </p>
+
+                            <img 
+                              src={project.image} 
+                              alt={project.title} 
+                              className="project-image"
+                              style={{
+                                width: "100%",
+                                height: "180px",
+                                objectFit: "cover",
+                                borderRadius: "8px",
+                                marginBottom: "16px"
+                              }}
+                            />
+
+                            <div style={{
                               display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              gap: "6px",
-                              padding: "10px",
-                              background: "rgba(255, 255, 255, 0.05)",
-                              border: "1px solid rgba(255, 255, 255, 0.1)",
-                              borderRadius: "8px",
-                              color: "#888",
-                              cursor: "not-allowed",
-                              fontSize: "14px",
-                              fontWeight: "600"
-                            }}
-                          >
-                            <FaExternalLinkAlt /> Demo
-                          </button>
-                        )}
-                      </div>
+                              gap: "12px",
+                              marginBottom: "16px"
+                            }}>
+                              <a 
+                                href={project.github} 
+                                target="_blank" 
+                                rel="noreferrer" 
+                                style={{
+                                  flex: 1,
+                                  display: "flex",
+                                  alignItems: "center",
+                                  justifyContent: "center",
+                                  gap: "6px",
+                                  padding: "10px",
+                                  background: "rgba(251, 217, 173, 0.1)",
+                                  border: "1px solid rgba(251, 217, 173, 0.3)",
+                                  borderRadius: "8px",
+                                  color: "#fbd9ad",
+                                  textDecoration: "none",
+                                  transition: "all 0.3s ease",
+                                  fontSize: "14px",
+                                  fontWeight: "600"
+                                }}
+                                onMouseEnter={(e) => {
+                                  e.currentTarget.style.background = "rgba(251, 217, 173, 0.2)";
+                                  e.currentTarget.style.borderColor = "#fbd9ad";
+                                }}
+                                onMouseLeave={(e) => {
+                                  e.currentTarget.style.background = "rgba(251, 217, 173, 0.1)";
+                                  e.currentTarget.style.borderColor = "rgba(251, 217, 173, 0.3)";
+                                }}
+                              >
+                                <FaCode /> Code
+                              </a>
 
-                      <p 
-                        className="project--desc" 
-                        style={{ 
-                          background: "#fbd9ad", 
-                          color: "#b061df", 
-                          fontWeight: 600,
-                          padding: "12px",
-                          borderRadius: "8px",
-                          fontSize: "14px",
-                          lineHeight: "1.6",
-                          marginBottom: "12px"
-                        }}
-                      >
-                        {project.description}
-                      </p>
+                              {project.status === "live" && project.demo ? (
+                                <a 
+                                  href={project.demo} 
+                                  target="_blank" 
+                                  rel="noreferrer"
+                                  style={{
+                                    flex: 1,
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    gap: "6px",
+                                    padding: "10px",
+                                    background: "linear-gradient(135deg, #8e46ba, #b061df)",
+                                    border: "none",
+                                    borderRadius: "8px",
+                                    color: "#fff",
+                                    textDecoration: "none",
+                                    transition: "all 0.3s ease",
+                                    fontSize: "14px",
+                                    fontWeight: "600"
+                                  }}
+                                  onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = "translateY(-2px)";
+                                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(142, 70, 186, 0.4)";
+                                  }}
+                                  onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = "translateY(0)";
+                                    e.currentTarget.style.boxShadow = "none";
+                                  }}
+                                >
+                                  <FaExternalLinkAlt /> Demo
+                                </a>
+                              ) : (
+                                <button
+                                  disabled
+                                  style={{
+                                    flex: 1,
+                                    display: "flex",
+                                    alignItems: "center",
+                                    justifyContent: "center",
+                                    gap: "6px",
+                                    padding: "10px",
+                                    background: "rgba(255, 255, 255, 0.05)",
+                                    border: "1px solid rgba(255, 255, 255, 0.1)",
+                                    borderRadius: "8px",
+                                    color: "#888",
+                                    cursor: "not-allowed",
+                                    fontSize: "14px",
+                                    fontWeight: "600"
+                                  }}
+                                >
+                                  <FaExternalLinkAlt /> Demo
+                                </button>
+                              )}
+                            </div>
 
-                      <div 
-                        className="project--lang" 
-                        style={{ 
-                          background: "#fbd9ad", 
-                          color: "#b061df", 
-                          fontWeight: 600,
-                          padding: "12px",
-                          borderRadius: "8px",
-                          fontSize: "13px"
-                        }}
-                      >
-                        {project.tags}
-                      </div>
-                    </div>
-                  </div>
-                </Fade>
-              </Col>
-            ))}
-          </Row>
+                            <p 
+                              className="project--desc" 
+                              style={{ 
+                                background: "#fbd9ad", 
+                                color: "#b061df", 
+                                fontWeight: 600,
+                                padding: "12px",
+                                borderRadius: "8px",
+                                fontSize: "14px",
+                                lineHeight: "1.6",
+                                marginBottom: "12px"
+                              }}
+                            >
+                              {project.description}
+                            </p>
 
-          {/* View All Button */}
-          <div className="blog--viewAll text-center mt-4">
-            <Link to="/projectspage">
-              <button className="btn btn-primary">
-                Alle Projekte ansehen <HiArrowRight className="viewArr" />
-              </button>
-            </Link>
+                            <div 
+                              className="project--lang" 
+                              style={{ 
+                                background: "#fbd9ad", 
+                                color: "#b061df", 
+                                fontWeight: 600,
+                                padding: "12px",
+                                borderRadius: "8px",
+                                fontSize: "13px"
+                              }}
+                            >
+                              {project.tags}
+                            </div>
+                          </div>
+                        </div>
+                      </Fade>
+                    </Col>
+                  ))}
+                </Row>
+              </Container>
+            </Container>
           </div>
         </Container>
       </Container>
-    </div>
+    </section>
   );
 }
