@@ -13,9 +13,10 @@ function Resume() {
   const [width, setWidth] = useState(1200);
   const [numPagesResume, setNumPagesResume] = useState(null);
   const [numPagesCertificate, setNumPagesCertificate] = useState(null);
+  const resumePDF = process.env.PUBLIC_URL + "/Lebenslauf-Martina-Schulz.pdf";
+  const certificatePDF = process.env.PUBLIC_URL + "/Praktikumszeugnis-Martina-Schulz.pdf";
 
-  const resumePDF = `${process.env.PUBLIC_URL}/Lebenslauf-Martina-Schulz.pdf`;
-  const certificatePDF = `${process.env.PUBLIC_URL}/Praktikumszeugnis-Martina-Schulz.pdf`;
+
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
