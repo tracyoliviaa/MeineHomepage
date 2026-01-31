@@ -100,11 +100,33 @@ export default function Certification() {
               </Row>
             </Col>
           </Row>
+          
+          {/* View All Button - FIXED */}
           <div className="blog--viewAll">
-            <Link to="/certificatepage">
-              <button className="btn btn-primary">
+            <Link to="/certificatepage" style={{ textDecoration: 'none' }}>
+              <button 
+                className="btn btn-primary"
+                style={{
+                  background: "linear-gradient(135deg, #8e46ba, #b061df)",
+                  border: "none",
+                  padding: "14px 28px",
+                  fontSize: "16px",
+                  fontWeight: "600",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
+                  borderRadius: "25px",
+                  color: "#fff",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  whiteSpace: "nowrap",
+                  minWidth: "220px",
+                  boxShadow: "0 4px 15px rgba(142, 70, 186, 0.3)"
+                }}
+              >
                 Alle Zertifikate ansehen
-                <HiArrowRight className="viewArr" />
+                <HiArrowRight className="viewArr" style={{ fontSize: "20px" }} />
               </button>
             </Link>
           </div>

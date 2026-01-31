@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
 import {
   AiFillStar,
@@ -14,6 +14,7 @@ import profileImg from "../../assets/profile.jpg";
 export default function MyNav() {
   const [expand, updateExpanded] = useState(false);
   const [navColour, updateNavbar] = useState(false);
+  const location = useLocation();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -28,174 +29,215 @@ export default function MyNav() {
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
+  const navItems = [
+    { path: "/", label: "Home", icon: <AiOutlineHome /> },
+    { path: "/projectspage", label: "Projects", icon: <AiOutlineFundProjectionScreen /> },
+    { path: "/resume", label: "Resume", icon: <CgFileDocument /> },
+    { path: "/certificatepage", label: "Certificates", icon: <FaCertificate /> }
+  ];
+
+  const isActive = (path) => location.pathname === path;
+
   return (
     <Navbar
       expanded={expand}
       fixed="top"
       expand="md"
-      className="navbar-professional"
       style={{
         background: navColour 
-          ? 'rgba(10, 10, 10, 0.95)' 
+          ? 'rgba(10, 10, 10, 0.98)' 
           : 'transparent',
-        backdropFilter: navColour ? 'blur(10px)' : 'none',
-        transition: 'all 0.3s ease',
+        backdropFilter: navColour ? 'blur(20px)' : 'none',
+        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
         borderBottom: navColour ? '1px solid rgba(142, 70, 186, 0.2)' : 'none',
-        padding: '16px 0',
-        boxShadow: navColour ? '0 2px 10px rgba(0, 0, 0, 0.1)' : 'none'
+        padding: '12px 0',
+        boxShadow: navColour ? '0 4px 20px rgba(0, 0, 0, 0.1)' : 'none',
+        zIndex: 1000
       }}
     >
       <Container>
+        {/* Logo/Brand */}
         <Navbar.Brand 
           as={Link} 
           to="/" 
           style={{ 
             display: 'flex', 
             alignItems: 'center', 
-            gap: '12px',
-            textDecoration: 'none'
+            gap: '14px',
+            textDecoration: 'none',
+            padding: '8px 0'
           }}
         >
-          <div className="logo-wrapper-professional">
+          <div style={{
+            position: 'relative',
+            width: '50px',
+            height: '50px'
+          }}>
             <img 
               src={profileImg}
               className="img-fluid" 
               alt="Martina Schulz" 
               style={{
-                width: '50px',
-                height: '50px',
+                width: '100%',
+                height: '100%',
                 borderRadius: '50%',
                 border: '2px solid #8e46ba',
                 objectFit: 'cover',
-                transition: 'transform 0.3s ease'
+                transition: 'all 0.3s ease',
+                boxShadow: '0 4px 12px rgba(142, 70, 186, 0.3)'
               }}
-              onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
-              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.1) rotate(5deg)';
+                e.target.style.borderColor = '#b061df';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1) rotate(0deg)';
+                e.target.style.borderColor = '#8e46ba';
+              }}
             />
           </div>
-          <h5
-            style={{
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '2px'
+          }}>
+            <h5 style={{
               margin: 0,
               color: "#fbd9ad",
               fontWeight: 700,
               fontSize: '18px',
               letterSpacing: '0.5px'
-            }}
-          >
-            Martina Schulz
-          </h5>
+            }}>
+              Martina Schulz
+            </h5>
+            <span style={{
+              fontSize: '11px',
+              color: '#b8b8b8',
+              textTransform: 'uppercase',
+              letterSpacing: '0.5px',
+              fontWeight: 600
+            }}>
+              Software Developer
+            </span>
+          </div>
         </Navbar.Brand>
 
+        {/* Mobile Toggle */}
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
-          onClick={() => {
-            updateExpanded(expand ? false : "expanded");
-          }}
+          onClick={() => updateExpanded(expand ? false : "expanded")}
           style={{
-            border: '2px solid #8e46ba',
-            borderRadius: '8px'
+            border: '2px solid rgba(142, 70, 186, 0.5)',
+            borderRadius: '10px',
+            padding: '8px 12px',
+            background: 'rgba(142, 70, 186, 0.1)',
+            transition: 'all 0.3s ease'
           }}
         >
-          <span></span>
-          <span></span>
-          <span></span>
+          <span style={{
+            width: '24px',
+            height: '2px',
+            background: '#fbd9ad',
+            display: 'block',
+            margin: '5px 0',
+            transition: 'all 0.3s ease',
+            transform: expand ? 'rotate(45deg) translateY(7px)' : 'none'
+          }}></span>
+          <span style={{
+            width: '24px',
+            height: '2px',
+            background: '#fbd9ad',
+            display: 'block',
+            margin: '5px 0',
+            opacity: expand ? 0 : 1,
+            transition: 'all 0.3s ease'
+          }}></span>
+          <span style={{
+            width: '24px',
+            height: '2px',
+            background: '#fbd9ad',
+            display: 'block',
+            margin: '5px 0',
+            transition: 'all 0.3s ease',
+            transform: expand ? 'rotate(-45deg) translateY(-7px)' : 'none'
+          }}></span>
         </Navbar.Toggle>
 
-        <Navbar.Collapse id="responsive-navbar-nav" className="navbarmain">
-          <Nav className="ms-auto" style={{ gap: '8px' }}>
-            <Nav.Link 
-              as={Link} 
-              to="/" 
-              onClick={() => updateExpanded(false)}
-              className="nav-link-professional"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '10px 18px',
-                borderRadius: '8px',
-                transition: 'all 0.3s ease',
-                fontWeight: 600,
-                fontSize: '15px',
-                color: '#fff'
-              }}
-            >
-              <AiOutlineHome style={{ fontSize: '18px' }} /> Home
-            </Nav.Link>
+        {/* Nav Links */}
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ms-auto" style={{ gap: '8px', alignItems: 'center' }}>
+            {navItems.map((item, index) => (
+              <Nav.Link
+                key={index}
+                as={Link}
+                to={item.path}
+                onClick={() => updateExpanded(false)}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  padding: '10px 20px',
+                  borderRadius: '10px',
+                  transition: 'all 0.3s ease',
+                  fontWeight: 600,
+                  fontSize: '15px',
+                  color: isActive(item.path) ? '#fbd9ad' : '#d4d4d4',
+                  background: isActive(item.path) 
+                    ? 'rgba(142, 70, 186, 0.2)' 
+                    : 'transparent',
+                  border: isActive(item.path)
+                    ? '1px solid rgba(142, 70, 186, 0.4)'
+                    : '1px solid transparent',
+                  position: 'relative',
+                  overflow: 'hidden'
+                }}
+                onMouseEnter={(e) => {
+                  if (!isActive(item.path)) {
+                    e.currentTarget.style.background = 'rgba(142, 70, 186, 0.1)';
+                    e.currentTarget.style.color = '#fbd9ad';
+                    e.currentTarget.style.transform = 'translateY(-2px)';
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isActive(item.path)) {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.color = '#d4d4d4';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                  }
+                }}
+              >
+                <span style={{ fontSize: '18px' }}>{item.icon}</span>
+                {item.label}
+              </Nav.Link>
+            ))}
 
-            <Nav.Link
-              as={Link}
-              to="/projectspage"
-              onClick={() => updateExpanded(false)}
-              className="nav-link-professional"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '10px 18px',
-                borderRadius: '8px',
-                transition: 'all 0.3s ease',
-                fontWeight: 600,
-                fontSize: '15px',
-                color: '#fff'
-              }}
-            >
-              <AiOutlineFundProjectionScreen style={{ fontSize: '18px' }} /> Projects
-            </Nav.Link>
-
-            <Nav.Link
-              as={Link}
-              to="/resume"
-              onClick={() => updateExpanded(false)}
-              className="nav-link-professional"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '10px 18px',
-                borderRadius: '8px',
-                transition: 'all 0.3s ease',
-                fontWeight: 600,
-                fontSize: '15px',
-                color: '#fff'
-              }}
-            >
-              <CgFileDocument style={{ fontSize: '18px' }} /> Resume
-            </Nav.Link>
-
-            <Nav.Link
-              as={Link}
-              to="/certificatepage"
-              onClick={() => updateExpanded(false)}
-              className="nav-link-professional"
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '10px 18px',
-                borderRadius: '8px',
-                transition: 'all 0.3s ease',
-                fontWeight: 600,
-                fontSize: '15px',
-                color: '#fff'
-              }}
-            >
-              <FaCertificate style={{ fontSize: '18px' }} /> Certificates
-            </Nav.Link>
-
-            <Nav.Item style={{ marginLeft: '8px' }}>
+            {/* GitHub Star Button */}
+            <Nav.Item style={{ marginLeft: '12px' }}>
               <a
                 href="https://github.com/tracyoliviaa"
                 target="_blank"
                 rel="noreferrer"
-                className="btn-professional btn-primary-professional"
                 style={{
                   padding: '10px 20px',
                   fontSize: '14px',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '6px',
-                  textDecoration: 'none'
+                  gap: '8px',
+                  textDecoration: 'none',
+                  background: 'linear-gradient(135deg, #8e46ba, #b061df)',
+                  color: '#fff',
+                  borderRadius: '10px',
+                  fontWeight: 600,
+                  transition: 'all 0.3s ease',
+                  border: 'none'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-2px) scale(1.05)';
+                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(142, 70, 186, 0.4)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
                 <CgGitFork style={{ fontSize: '18px' }} />

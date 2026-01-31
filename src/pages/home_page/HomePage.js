@@ -22,8 +22,8 @@ export default function Home() {
         {/* HERO SECTION */}
         <div className="home-section-professional" style={{ 
           minHeight: '100vh',
-          paddingTop: '100px',
-          paddingBottom: '60px'
+          paddingTop: '120px',
+          paddingBottom: '80px'
         }}>
           <div className="home-content-professional">
             <Fade left duration={1000}>
@@ -33,18 +33,29 @@ export default function Home() {
             </Fade>
             
             <Zoom left cascade>
-              <h1 className="home-title-professional">
+              <h1 className="home-title-professional" style={{
+                textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'
+              }}>
                 Hallo!{" "}
                 <span className="wave" role="img" aria-labelledby="wave">
                   👋🏻
                 </span>
                 <br />
-                Ich bin <span className="home-title-gradient">Martina Schulz</span>
+                Ich bin <span className="home-title-gradient" style={{
+                  textShadow: '3px 3px 6px rgba(0, 0, 0, 0.7)',
+                  fontWeight: 800
+                }}>Martina Schulz</span>
               </h1>
             </Zoom>
 
             <Fade left duration={1200} delay={200}>
-              <p className="home-subtitle-professional">
+              <p className="home-subtitle-professional" style={{
+                color: '#e8e8e8',
+                fontSize: '20px',
+                lineHeight: '1.8',
+                textShadow: '1px 1px 3px rgba(0, 0, 0, 0.8)',
+                fontWeight: 500
+              }}>
                 Leidenschaftliche Entwicklerin mit Fokus auf moderne Webtechnologien,
                 performante Frontends und skalierbare Softwarearchitekturen.
                 Ich kombiniere technisches Know-how mit Kreativität, um digitale
@@ -52,16 +63,46 @@ export default function Home() {
               </p>
             </Fade>
 
-            <div className="typing-homeclass">
+            <div className="typing-homeclass" style={{
+              background: 'rgba(142, 70, 186, 0.2)',
+              padding: '16px 24px',
+              borderRadius: '12px',
+              border: '2px solid rgba(142, 70, 186, 0.4)',
+              display: 'inline-block',
+              marginBottom: '32px',
+              backdropFilter: 'blur(10px)'
+            }}>
               <Typing />
             </div>
 
             <Fade left duration={1400} delay={400}>
-              <div className="home-cta-professional">
-                <a href="#projects" className="btn-professional btn-primary-professional">
+              <div className="home-cta-professional" style={{
+                display: 'flex',
+                gap: '16px',
+                flexWrap: 'wrap'
+              }}>
+                <a 
+                  href="#projects" 
+                  className="btn-professional btn-primary-professional"
+                  style={{
+                    textDecoration: 'none',
+                    fontSize: '16px',
+                    padding: '16px 32px',
+                    fontWeight: 600
+                  }}
+                >
                   Projekte ansehen
                 </a>
-                <a href="#contact" className="btn-professional btn-secondary-professional">
+                <a 
+                  href="#contact" 
+                  className="btn-professional btn-secondary-professional"
+                  style={{
+                    textDecoration: 'none',
+                    fontSize: '16px',
+                    padding: '16px 32px',
+                    fontWeight: 600
+                  }}
+                >
                   Kontakt aufnehmen
                 </a>
               </div>
@@ -77,6 +118,9 @@ export default function Home() {
                       rel="noreferrer"
                       className="iconcolour homesocialicons"
                       aria-label="GitHub Profile"
+                      style={{
+                        boxShadow: '0 4px 12px rgba(142, 70, 186, 0.4)'
+                      }}
                     >
                       <AiFillGithub />
                     </a>
@@ -88,6 +132,9 @@ export default function Home() {
                       rel="noreferrer"
                       className="iconcolour homesocialicons"
                       aria-label="LinkedIn Profile"
+                      style={{
+                        boxShadow: '0 4px 12px rgba(142, 70, 186, 0.4)'
+                      }}
                     >
                       <FaLinkedinIn />
                     </a>
@@ -100,7 +147,9 @@ export default function Home() {
           <div className="home-image-professional">
             <Fade right duration={1000}>
               <Tilt>
-                <div className="image-frame-professional">
+                <div className="image-frame-professional" style={{
+                  boxShadow: '0 20px 60px rgba(142, 70, 186, 0.5)'
+                }}>
                   <img
                     src={profileImg}
                     alt="Martina Schulz - Software Developer"

@@ -55,12 +55,13 @@ export default function Projects() {
       <span style={{
         background: `${badge.color}20`,
         color: badge.color,
-        padding: "4px 12px",
+        padding: "6px 14px",
         borderRadius: "12px",
         fontSize: "11px",
         fontWeight: "600",
         textTransform: "uppercase",
-        letterSpacing: "0.5px"
+        letterSpacing: "0.5px",
+        whiteSpace: "nowrap"
       }}>
         {badge.text}
       </span>
@@ -85,17 +86,22 @@ export default function Projects() {
                     className="singleProject" 
                     style={{ 
                       backgroundColor: "rgb(142 70 186 / 31%)", 
-                      border: "1px solid",
+                      border: "1px solid rgba(142, 70, 186, 0.5)",
+                      borderRadius: "16px",
                       position: "relative",
-                      minHeight: "520px"
+                      minHeight: "540px",
+                      padding: "24px",
+                      transition: "all 0.3s ease"
                     }}
                   >
                     <div className="projectContent">
+                      {/* Header with Title and Badge */}
                       <div style={{
                         display: "flex",
                         justifyContent: "space-between",
                         alignItems: "flex-start",
-                        marginBottom: "12px"
+                        marginBottom: "12px",
+                        gap: "12px"
                       }}>
                         <h5 
                           className="project-title" 
@@ -105,24 +111,32 @@ export default function Projects() {
                             flex: 1,
                             display: "flex",
                             alignItems: "center",
-                            gap: "8px"
+                            gap: "10px",
+                            fontSize: "20px",
+                            fontWeight: "700",
+                            lineHeight: "1.3"
                           }}
                         >
-                          <span style={{ fontSize: "24px" }}>{project.emoji}</span>
-                          {project.title.split('–')[0]}
+                          <span style={{ fontSize: "28px", flexShrink: 0 }}>{project.emoji}</span>
+                          <span style={{ wordBreak: "break-word" }}>
+                            {project.title.split('–')[0]}
+                          </span>
                         </h5>
                         {getStatusBadge(project.status)}
                       </div>
 
+                      {/* Subtitle */}
                       <p style={{
                         color: "#eb90ff",
-                        fontSize: "13px",
-                        marginBottom: "12px",
-                        fontWeight: "600"
+                        fontSize: "14px",
+                        marginBottom: "16px",
+                        fontWeight: "600",
+                        lineHeight: "1.4"
                       }}>
                         {project.title.split('–')[1]}
                       </p>
 
+                      {/* Project Image */}
                       <img 
                         src={project.image} 
                         alt={project.title} 
@@ -131,11 +145,13 @@ export default function Projects() {
                           width: "100%",
                           height: "180px",
                           objectFit: "cover",
-                          borderRadius: "8px",
-                          marginBottom: "16px"
+                          borderRadius: "12px",
+                          marginBottom: "16px",
+                          border: "1px solid rgba(142, 70, 186, 0.3)"
                         }}
                       />
 
+                      {/* Action Buttons */}
                       <div style={{
                         display: "flex",
                         gap: "12px",
@@ -151,8 +167,8 @@ export default function Projects() {
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            gap: "6px",
-                            padding: "10px",
+                            gap: "8px",
+                            padding: "12px 16px",
                             background: "rgba(251, 217, 173, 0.1)",
                             border: "1px solid rgba(251, 217, 173, 0.3)",
                             borderRadius: "8px",
@@ -160,18 +176,21 @@ export default function Projects() {
                             textDecoration: "none",
                             transition: "all 0.3s ease",
                             fontSize: "14px",
-                            fontWeight: "600"
+                            fontWeight: "600",
+                            whiteSpace: "nowrap"
                           }}
                           onMouseEnter={(e) => {
                             e.currentTarget.style.background = "rgba(251, 217, 173, 0.2)";
                             e.currentTarget.style.borderColor = "#fbd9ad";
+                            e.currentTarget.style.transform = "translateY(-2px)";
                           }}
                           onMouseLeave={(e) => {
                             e.currentTarget.style.background = "rgba(251, 217, 173, 0.1)";
                             e.currentTarget.style.borderColor = "rgba(251, 217, 173, 0.3)";
+                            e.currentTarget.style.transform = "translateY(0)";
                           }}
                         >
-                          <FaCode /> Code
+                          <FaCode style={{ flexShrink: 0 }} /> Code
                         </a>
 
                         {/* Demo Link */}
@@ -185,8 +204,8 @@ export default function Projects() {
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
-                              gap: "6px",
-                              padding: "10px",
+                              gap: "8px",
+                              padding: "12px 16px",
                               background: "linear-gradient(135deg, #8e46ba, #b061df)",
                               border: "none",
                               borderRadius: "8px",
@@ -194,7 +213,8 @@ export default function Projects() {
                               textDecoration: "none",
                               transition: "all 0.3s ease",
                               fontSize: "14px",
-                              fontWeight: "600"
+                              fontWeight: "600",
+                              whiteSpace: "nowrap"
                             }}
                             onMouseEnter={(e) => {
                               e.currentTarget.style.transform = "translateY(-2px)";
@@ -205,7 +225,7 @@ export default function Projects() {
                               e.currentTarget.style.boxShadow = "none";
                             }}
                           >
-                            <FaExternalLinkAlt /> Demo
+                            <FaExternalLinkAlt style={{ flexShrink: 0 }} /> Demo
                           </a>
                         ) : (
                           <button
@@ -215,30 +235,32 @@ export default function Projects() {
                               display: "flex",
                               alignItems: "center",
                               justifyContent: "center",
-                              gap: "6px",
-                              padding: "10px",
+                              gap: "8px",
+                              padding: "12px 16px",
                               background: "rgba(255, 255, 255, 0.05)",
                               border: "1px solid rgba(255, 255, 255, 0.1)",
                               borderRadius: "8px",
                               color: "#888",
                               cursor: "not-allowed",
                               fontSize: "14px",
-                              fontWeight: "600"
+                              fontWeight: "600",
+                              whiteSpace: "nowrap"
                             }}
                           >
-                            <FaExternalLinkAlt /> Demo
+                            <FaExternalLinkAlt style={{ flexShrink: 0 }} /> Demo
                           </button>
                         )}
                       </div>
 
+                      {/* Description */}
                       <p 
                         className="project--desc" 
                         style={{ 
                           background: "#fbd9ad", 
                           color: "#b061df", 
                           fontWeight: 600,
-                          padding: "12px",
-                          borderRadius: "8px",
+                          padding: "14px",
+                          borderRadius: "10px",
                           fontSize: "14px",
                           lineHeight: "1.6",
                           marginBottom: "12px"
@@ -247,15 +269,17 @@ export default function Projects() {
                         {project.description}
                       </p>
 
+                      {/* Tags */}
                       <div 
                         className="project--lang" 
                         style={{ 
                           background: "#fbd9ad", 
                           color: "#b061df", 
                           fontWeight: 600,
-                          padding: "12px",
-                          borderRadius: "8px",
-                          fontSize: "13px"
+                          padding: "14px",
+                          borderRadius: "10px",
+                          fontSize: "13px",
+                          lineHeight: "1.5"
                         }}
                       >
                         {project.tags}
@@ -267,11 +291,32 @@ export default function Projects() {
             ))}
           </Row>
 
-          {/* View All Button */}
-          <div className="blog--viewAll text-center mt-4">
-            <Link to="/projectspage">
-              <button className="btn btn-primary">
-                Alle Projekte ansehen <HiArrowRight className="viewArr" />
+          {/* View All Button - FIXED */}
+          <div className="blog--viewAll">
+            <Link to="/projectspage" style={{ textDecoration: 'none' }}>
+              <button 
+                className="btn btn-primary"
+                style={{
+                  background: "linear-gradient(135deg, #8e46ba, #b061df)",
+                  border: "none",
+                  padding: "14px 28px",
+                  fontSize: "16px",
+                  fontWeight: "600",
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  gap: "10px",
+                  borderRadius: "25px",
+                  color: "#fff",
+                  cursor: "pointer",
+                  transition: "all 0.3s ease",
+                  whiteSpace: "nowrap",
+                  minWidth: "200px",
+                  boxShadow: "0 4px 15px rgba(142, 70, 186, 0.3)"
+                }}
+              >
+                Alle Projekte ansehen
+                <HiArrowRight className="viewArr" style={{ fontSize: "20px" }} />
               </button>
             </Link>
           </div>
