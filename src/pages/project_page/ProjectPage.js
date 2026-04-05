@@ -17,7 +17,7 @@ export default function ProjectPage() {
       image: knowledgeFlowImage,
       emoji: "📚",
       github: "https://github.com/tracyoliviaa/KnowledgeFlow",
-      demo: "https://knowledgeflow-frontend.vercel.app/login", 
+      demo: "https://knowledgeflow1.netlify.app",
       tags: "React · Tailwind · Node.js · Express · MongoDB · Firebase",
       status: "live"
     },
@@ -27,7 +27,7 @@ export default function ProjectPage() {
       image: coreMapImage,
       emoji: "🗺️",
       github: "https://github.com/tracyoliviaa/core-map", 
-      demo: "https://core-map.vercel.app",
+      demo: "https://tracyoliviaa.github.io/core-map", 
       tags: "React · MUI · Node.js · MongoDB · LocalStorage",
       status: "live"
     },
@@ -40,7 +40,17 @@ export default function ProjectPage() {
       demo: "https://dailymind-jlirf6htr-tracyoliviaas-projects.vercel.app", 
       tags: "React · Node.js · MongoDB · Express · Gamification",
       status: "live"
-    }
+    },
+    {
+  title: "Tracy's Dashboard – Personal HQ",
+  description: "Persönliches Dashboard mit Habit-Tracker, Finanz-Tracking (VWCE), Dark Mode und live KPIs — komplett selbst gebaut ohne Template.",
+  image: coreMapImage, // temporär bis du ein Screenshot hast
+  emoji: "📊",
+  github: "https://github.com/tracyoliviaa/tracy-dashboard",
+  demo: "https://tracyoliviaa.github.io/tracy-dashboard",
+  tags: "React · Vite · Tailwind · Context API · Dark Mode",
+  status: "live"
+},
   ];
 
   const getStatusBadge = (status) => {
