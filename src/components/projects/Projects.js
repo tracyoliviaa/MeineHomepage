@@ -18,7 +18,7 @@ export default function Projects() {
       image: knowledgeFlowImage,
       emoji: "📚",
       github: "https://github.com/tracyoliviaa/KnowledgeFlow",
-      demo: "https://knowledgeflow-frontend.vercel.app/login", 
+      demo: "https://knowledgeflow1.netlify.app/login", 
       tags: "React · Tailwind · Node.js · Express · MongoDB · Firebase",
       status: "live"
     },
@@ -28,7 +28,7 @@ export default function Projects() {
       image: coreMapImage,
       emoji: "🗺️",
       github: "https://github.com/tracyoliviaa/core-map", 
-      demo: "https://core-map.vercel.app",
+      demo: "https://tracyoliviaa.github.io/core-map/",
       tags: "React · MUI · Node.js · MongoDB · LocalStorage",
       status: "live"
     },
@@ -38,7 +38,7 @@ export default function Projects() {
       image: dailyMindImage,
       emoji: "🧠",
       github: "https://github.com/tracyoliviaa/DailyMind",
-      demo: "https://dailymind-jlirf6htr-tracyoliviaas-projects.vercel.app", 
+      demo: "https://tracyoliviaa.github.io/dailymind/",
       tags: "React · Node.js · MongoDB · Express · Gamification",
       status: "live"
     }
