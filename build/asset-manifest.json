@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/MeineHomepage/static/css/main.d51ee75b.css",
-    "main.js": "/MeineHomepage/static/js/main.ad49a8ab.js",
+    "main.css": "/MeineHomepage/static/css/main.fce8c528.css",
+    "main.js": "/MeineHomepage/static/js/main.ae5f5da2.js",
     "static/media/nyc.png": "/MeineHomepage/static/media/nyc.139298242835d62facd4.png",
     "static/media/hd.png": "/MeineHomepage/static/media/hd.49765c958331f0edefe9.png",
     "static/media/onboarding.png": "/MeineHomepage/static/media/onboarding.542f8dee519b9dd4585f.png",
@@ -12,13 +12,13 @@
     "static/media/profile.jpg": "/MeineHomepage/static/media/profile.0869048e2c66e4c00001.jpg",
     "static/media/pre.svg": "/MeineHomepage/static/media/pre.e4c81c26304bc309eb55.svg",
     "static/media/h3.jpg": "/MeineHomepage/static/media/h3.dc52d5d40a40b13154b0.jpg",
-    "static/media/chorme.svg": "/MeineHomepage/static/media/chorme.b0bd08e3d4226484ce842d3453b979e9.svg",
+    "static/media/chorme.svg": "/MeineHomepage/static/media/chorme.76eb99c03649b560eca4188fff132dcf.svg",
     "index.html": "/MeineHomepage/index.html",
-    "main.d51ee75b.css.map": "/MeineHomepage/static/css/main.d51ee75b.css.map",
-    "main.ad49a8ab.js.map": "/MeineHomepage/static/js/main.ad49a8ab.js.map"
+    "main.fce8c528.css.map": "/MeineHomepage/static/css/main.fce8c528.css.map",
+    "main.ae5f5da2.js.map": "/MeineHomepage/static/js/main.ae5f5da2.js.map"
   },
   "entrypoints": [
-    "static/css/main.d51ee75b.css",
-    "static/js/main.ad49a8ab.js"
+    "static/css/main.fce8c528.css",
+    "static/js/main.ae5f5da2.js"
   ]
 }
