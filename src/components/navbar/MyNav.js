@@ -2,11 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link, useLocation } from "react-router-dom";
 import { CgGitFork } from "react-icons/cg";
-import {
-  AiFillStar,
-  AiOutlineHome,
-  AiOutlineFundProjectionScreen,
-} from "react-icons/ai";
+import { AiFillStar, AiOutlineHome, AiOutlineFundProjectionScreen } from "react-icons/ai";
 import { FaCertificate } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 import profileImg from "../../assets/profile.jpg";
@@ -16,24 +12,19 @@ export default function MyNav() {
   const [navColour, updateNavbar] = useState(false);
   const location = useLocation();
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      updateNavbar(true);
-    } else {
-      updateNavbar(false);
-    }
-  }
-
   useEffect(() => {
+    function scrollHandler() {
+      updateNavbar(window.scrollY >= 20);
+    }
     window.addEventListener("scroll", scrollHandler);
     return () => window.removeEventListener("scroll", scrollHandler);
   }, []);
 
   const navItems = [
-    { path: "/", label: "Home", icon: <AiOutlineHome /> },
-    { path: "/projectspage", label: "Projects", icon: <AiOutlineFundProjectionScreen /> },
-    { path: "/resume", label: "Resume", icon: <CgFileDocument /> },
-    { path: "/certificatepage", label: "Certificates", icon: <FaCertificate /> }
+    { path: "/",              label: "Start",         icon: <AiOutlineHome /> },
+    { path: "/projectspage",  label: "Projekte",      icon: <AiOutlineFundProjectionScreen /> },
+    { path: "/resume",        label: "Lebenslauf",    icon: <CgFileDocument /> },
+    { path: "/certificatepage", label: "Zertifikate", icon: <FaCertificate /> },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -44,206 +35,91 @@ export default function MyNav() {
       fixed="top"
       expand="md"
       style={{
-        background: navColour 
-          ? 'rgba(10, 10, 10, 0.98)' 
-          : 'transparent',
-        backdropFilter: navColour ? 'blur(20px)' : 'none',
-        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-        borderBottom: navColour ? '1px solid rgba(142, 70, 186, 0.2)' : 'none',
-        padding: '12px 0',
-        boxShadow: navColour ? '0 4px 20px rgba(0, 0, 0, 0.1)' : 'none',
-        zIndex: 1000
+        background: navColour ? "rgba(10,10,10,0.98)" : "transparent",
+        backdropFilter: navColour ? "blur(20px)" : "none",
+        transition: "all 0.3s ease",
+        borderBottom: navColour ? "1px solid rgba(142,70,186,0.2)" : "none",
+        padding: "12px 0",
+        zIndex: 1000,
       }}
     >
       <Container>
-        {/* Logo/Brand */}
-        <Navbar.Brand 
-          as={Link} 
-          to="/" 
-          style={{ 
-            display: 'flex', 
-            alignItems: 'center', 
-            gap: '14px',
-            textDecoration: 'none',
-            padding: '8px 0'
-          }}
-        >
-          <div style={{
-            position: 'relative',
-            width: '50px',
-            height: '50px'
-          }}>
-            <img 
-              src={profileImg}
-              className="img-fluid" 
-              alt="Martina Schulz" 
-              style={{
-                width: '100%',
-                height: '100%',
-                borderRadius: '50%',
-                border: '2px solid #8e46ba',
-                objectFit: 'cover',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 4px 12px rgba(142, 70, 186, 0.3)'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.transform = 'scale(1.1) rotate(5deg)';
-                e.target.style.borderColor = '#b061df';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = 'scale(1) rotate(0deg)';
-                e.target.style.borderColor = '#8e46ba';
-              }}
-            />
-          </div>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '2px'
-          }}>
-            <h5 style={{
-              margin: 0,
-              color: "#fbd9ad",
-              fontWeight: 700,
-              fontSize: '18px',
-              letterSpacing: '0.5px'
-            }}>
-              Martina Schulz
-            </h5>
-            <span style={{
-              fontSize: '11px',
-              color: '#b8b8b8',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px',
-              fontWeight: 600
-            }}>
-              Software Developer
-            </span>
+        <Navbar.Brand as={Link} to="/" style={{ display: "flex", alignItems: "center", gap: "12px", textDecoration: "none" }}>
+          <img
+            src={profileImg}
+            alt="Martina Schulz"
+            style={{ width: "44px", height: "44px", borderRadius: "50%", border: "2px solid #8e46ba", objectFit: "cover" }}
+          />
+          <div>
+            <div style={{ fontWeight: 700, fontSize: "16px", color: "#fbd9ad", lineHeight: 1.2 }}>Martina Schulz</div>
+            <div style={{ fontSize: "11px", color: "#b8b8b8", letterSpacing: "0.04em" }}>Software Entwicklerin</div>
           </div>
         </Navbar.Brand>
 
-        {/* Mobile Toggle */}
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => updateExpanded(expand ? false : "expanded")}
-          style={{
-            border: '2px solid rgba(142, 70, 186, 0.5)',
-            borderRadius: '10px',
-            padding: '8px 12px',
-            background: 'rgba(142, 70, 186, 0.1)',
-            transition: 'all 0.3s ease'
-          }}
+          style={{ border: "1px solid rgba(142,70,186,0.4)", borderRadius: "8px", padding: "6px 10px", background: "rgba(142,70,186,0.1)" }}
         >
-          <span style={{
-            width: '24px',
-            height: '2px',
-            background: '#fbd9ad',
-            display: 'block',
-            margin: '5px 0',
-            transition: 'all 0.3s ease',
-            transform: expand ? 'rotate(45deg) translateY(7px)' : 'none'
-          }}></span>
-          <span style={{
-            width: '24px',
-            height: '2px',
-            background: '#fbd9ad',
-            display: 'block',
-            margin: '5px 0',
-            opacity: expand ? 0 : 1,
-            transition: 'all 0.3s ease'
-          }}></span>
-          <span style={{
-            width: '24px',
-            height: '2px',
-            background: '#fbd9ad',
-            display: 'block',
-            margin: '5px 0',
-            transition: 'all 0.3s ease',
-            transform: expand ? 'rotate(-45deg) translateY(-7px)' : 'none'
-          }}></span>
+          <span style={{ display: "block", width: "20px", height: "2px", background: "#fbd9ad", margin: "4px 0" }} />
+          <span style={{ display: "block", width: "20px", height: "2px", background: "#fbd9ad", margin: "4px 0" }} />
+          <span style={{ display: "block", width: "20px", height: "2px", background: "#fbd9ad", margin: "4px 0" }} />
         </Navbar.Toggle>
 
-        {/* Nav Links */}
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto" style={{ gap: '8px', alignItems: 'center' }}>
-            {navItems.map((item, index) => (
+          <Nav className="ms-auto" style={{ gap: "4px", alignItems: "center" }}>
+            {navItems.map((item) => (
               <Nav.Link
-                key={index}
+                key={item.path}
                 as={Link}
                 to={item.path}
                 onClick={() => updateExpanded(false)}
                 style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  padding: '10px 20px',
-                  borderRadius: '10px',
-                  transition: 'all 0.3s ease',
-                  fontWeight: 600,
-                  fontSize: '15px',
-                  color: isActive(item.path) ? '#fbd9ad' : '#d4d4d4',
-                  background: isActive(item.path) 
-                    ? 'rgba(142, 70, 186, 0.2)' 
-                    : 'transparent',
-                  border: isActive(item.path)
-                    ? '1px solid rgba(142, 70, 186, 0.4)'
-                    : '1px solid transparent',
-                  position: 'relative',
-                  overflow: 'hidden'
+                  display: "flex", alignItems: "center", gap: "7px",
+                  padding: "9px 18px", borderRadius: "8px",
+                  fontWeight: 500, fontSize: "14px",
+                  color: isActive(item.path) ? "#fbd9ad" : "#d4d4d4",
+                  background: isActive(item.path) ? "rgba(142,70,186,0.2)" : "transparent",
+                  border: isActive(item.path) ? "1px solid rgba(142,70,186,0.4)" : "1px solid transparent",
+                  transition: "all 0.2s",
                 }}
                 onMouseEnter={(e) => {
                   if (!isActive(item.path)) {
-                    e.currentTarget.style.background = 'rgba(142, 70, 186, 0.1)';
-                    e.currentTarget.style.color = '#fbd9ad';
-                    e.currentTarget.style.transform = 'translateY(-2px)';
+                    e.currentTarget.style.background = "rgba(142,70,186,0.1)";
+                    e.currentTarget.style.color = "#fbd9ad";
                   }
                 }}
                 onMouseLeave={(e) => {
                   if (!isActive(item.path)) {
-                    e.currentTarget.style.background = 'transparent';
-                    e.currentTarget.style.color = '#d4d4d4';
-                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.color = "#d4d4d4";
                   }
                 }}
               >
-                <span style={{ fontSize: '18px' }}>{item.icon}</span>
+                <span style={{ fontSize: "16px" }}>{item.icon}</span>
                 {item.label}
               </Nav.Link>
             ))}
 
-            {/* GitHub Star Button */}
-            <Nav.Item style={{ marginLeft: '12px' }}>
-              <a
-                href="https://github.com/tracyoliviaa"
-                target="_blank"
-                rel="noreferrer"
-                style={{
-                  padding: '10px 20px',
-                  fontSize: '14px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  textDecoration: 'none',
-                  background: 'linear-gradient(135deg, #8e46ba, #b061df)',
-                  color: '#fff',
-                  borderRadius: '10px',
-                  fontWeight: 600,
-                  transition: 'all 0.3s ease',
-                  border: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-2px) scale(1.05)';
-                  e.currentTarget.style.boxShadow = '0 8px 20px rgba(142, 70, 186, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                <CgGitFork style={{ fontSize: '18px' }} />
-                <AiFillStar style={{ fontSize: '16px' }} />
-              </a>
-            </Nav.Item>
+            <a
+              href="https://github.com/tracyoliviaa"
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                marginLeft: "8px", padding: "9px 16px",
+                background: "linear-gradient(135deg,#8e46ba,#b061df)",
+                color: "#fff", borderRadius: "8px",
+                display: "flex", alignItems: "center", gap: "6px",
+                fontSize: "13px", fontWeight: 600, textDecoration: "none",
+                transition: "opacity 0.2s",
+              }}
+              onMouseEnter={(e) => e.currentTarget.style.opacity = "0.85"}
+              onMouseLeave={(e) => e.currentTarget.style.opacity = "1"}
+            >
+              <CgGitFork style={{ fontSize: "16px" }} />
+              <AiFillStar style={{ fontSize: "14px" }} />
+              GitHub
+            </a>
           </Nav>
         </Navbar.Collapse>
       </Container>

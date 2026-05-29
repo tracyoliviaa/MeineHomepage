@@ -3,172 +3,99 @@ import { Container, Row, Col } from "react-bootstrap";
 import { AiFillGithub } from "react-icons/ai";
 import { FaLinkedinIn, FaHeart } from "react-icons/fa";
 
+// ─── Einheitliche Links – nur hier ändern ────────────────────────────────────
+const GITHUB_URL   = "https://github.com/tracyoliviaa";
+const LINKEDIN_URL = "https://www.linkedin.com/in/martina-schulz-5a3a26351";
+const EMAIL        = "m-o-schulz@web.de";
+// ─────────────────────────────────────────────────────────────────────────────
+
 function Footer() {
-  let date = new Date();
-  let year = date.getFullYear();
+  const year = new Date().getFullYear();
+
+  const socialLinks = [
+    { href: GITHUB_URL,   icon: <AiFillGithub size={20} />,  label: "GitHub"   },
+    { href: LINKEDIN_URL, icon: <FaLinkedinIn size={18} />,  label: "LinkedIn" },
+  ];
 
   return (
     <footer style={{
-      background: 'rgba(10, 10, 10, 0.95)',
-      borderTop: '1px solid rgba(142, 70, 186, 0.2)',
-      padding: 'var(--spacing-xl) 0',
-      marginTop: 'var(--spacing-xxl)'
+      background: "rgba(10,10,10,0.95)",
+      borderTop: "1px solid rgba(142,70,186,0.2)",
+      padding: "40px 0",
+      marginTop: "80px",
     }}>
       <Container>
-        <Row>
-          {/* Left Section */}
-          <Col md={4} className="footer-copywright" style={{ marginBottom: 'var(--spacing-md)' }}>
-            <div style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 'var(--spacing-xs)'
-            }}>
-              <h3 style={{
-                fontSize: '18px',
-                fontWeight: 700,
-                color: '#fbd9ad',
-                marginBottom: 'var(--spacing-xs)'
-              }}>
-                Martina Schulz
-              </h3>
-              <p style={{
-                fontSize: '14px',
-                color: '#b8b8b8',
-                margin: 0,
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}>
-                Designed & Developed with <FaHeart size={14} color="#8e46ba" /> by Martina
-              </p>
+        <Row className="align-items-center">
+
+          {/* Links */}
+          <Col md={4} style={{ marginBottom: "16px" }}>
+            <div style={{ fontWeight: 700, fontSize: "17px", color: "#fbd9ad", marginBottom: "4px" }}>
+              Martina Schulz
+            </div>
+            <div style={{ fontSize: "13px", color: "#888", display: "flex", alignItems: "center", gap: "5px" }}>
+              Entwickelt mit <FaHeart size={12} color="#8e46ba" /> in Frankfurt
             </div>
           </Col>
 
-          {/* Center Section */}
-          <Col md={4} className="footer-copywright text-center" style={{ marginBottom: 'var(--spacing-md)' }}>
-            <p style={{
-              fontSize: '14px',
-              color: '#b8b8b8',
-              margin: 0
-            }}>
-              Copyright © {year} Martina Schulz
-            </p>
-            <p style={{
-              fontSize: '12px',
-              color: '#888',
-              marginTop: 'var(--spacing-xs)'
-            }}>
-              Alle Rechte vorbehalten
-            </p>
+          {/* Mitte */}
+          <Col md={4} className="text-center" style={{ marginBottom: "16px" }}>
+            <div style={{ fontSize: "13px", color: "#888" }}>© {year} Martina Schulz</div>
+            <div style={{ fontSize: "12px", color: "#555", marginTop: "4px" }}>Alle Rechte vorbehalten</div>
           </Col>
 
-          {/* Right Section - Social Icons */}
-          <Col md={4} className="footer-body">
-            <div style={{
-              display: 'flex',
-              justifyContent: 'flex-end',
-              gap: 'var(--spacing-sm)',
-              flexWrap: 'wrap'
-            }}>
-              <a
-                href="https://github.com/tracyolivia"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  width: '45px',
-                  height: '45px',
-                  border: '2px solid rgba(142, 70, 186, 0.3)',
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.3s ease',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#8e46ba';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #8e46ba, #b061df)';
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(142, 70, 186, 0.3)';
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <AiFillGithub size={22} color="#fbd9ad" />
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/martina-schulz/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  width: '45px',
-                  height: '45px',
-                  border: '2px solid rgba(142, 70, 186, 0.3)',
-                  borderRadius: '12px',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  transition: 'all 0.3s ease',
-                  textDecoration: 'none'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#8e46ba';
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #8e46ba, #b061df)';
-                  e.currentTarget.style.transform = 'translateY(-3px)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(142, 70, 186, 0.3)';
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.transform = 'translateY(0)';
-                }}
-              >
-                <FaLinkedinIn size={20} color="#fbd9ad" />
-              </a>
-
-     
+          {/* Social Icons */}
+          <Col md={4}>
+            <div style={{ display: "flex", justifyContent: "flex-end", gap: "10px" }}>
+              {socialLinks.map(({ href, icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
+                  style={{
+                    width: "42px", height: "42px",
+                    border: "1px solid rgba(142,70,186,0.3)",
+                    borderRadius: "10px",
+                    display: "flex", alignItems: "center", justifyContent: "center",
+                    color: "#fbd9ad", textDecoration: "none",
+                    transition: "all 0.2s",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.background = "linear-gradient(135deg,#8e46ba,#b061df)";
+                    e.currentTarget.style.borderColor = "transparent";
+                    e.currentTarget.style.transform = "translateY(-2px)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.background = "transparent";
+                    e.currentTarget.style.borderColor = "rgba(142,70,186,0.3)";
+                    e.currentTarget.style.transform = "translateY(0)";
+                  }}
+                >
+                  {icon}
+                </a>
+              ))}
             </div>
           </Col>
         </Row>
 
-        {/* Bottom Legal Links */}
-        <Row style={{ marginTop: 'var(--spacing-lg)', paddingTop: 'var(--spacing-md)', borderTop: '1px solid rgba(142, 70, 186, 0.1)' }}>
+        {/* Bottom */}
+        <Row style={{ marginTop: "24px", paddingTop: "16px", borderTop: "1px solid rgba(142,70,186,0.1)" }}>
           <Col className="text-center">
-            <div style={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: 'var(--spacing-md)',
-              flexWrap: 'wrap'
-            }}>
-              <a
-                href="/impressum"
-                style={{
-                  fontSize: '13px',
-                  color: '#888',
-                  textDecoration: 'none',
-                  transition: 'color 0.3s ease'
-                }}
-                onMouseEnter={(e) => e.target.style.color = '#fbd9ad'}
-                onMouseLeave={(e) => e.target.style.color = '#888'}
-              >
-                Impressum
-              </a>
-              <span style={{ color: '#444' }}>|</span>
-              <a
-                href="/datenschutz"
-                style={{
-                  fontSize: '13px',
-                  color: '#888',
-                  textDecoration: 'none',
-                  transition: 'color 0.3s ease'
-                }}
-                onMouseEnter={(e) => e.target.style.color = '#fbd9ad'}
-                onMouseLeave={(e) => e.target.style.color = '#888'}
-              >
-                Datenschutz
-              </a>
+            <div style={{ display: "flex", justifyContent: "center", gap: "24px", flexWrap: "wrap" }}>
+              {[
+                { label: "Impressum",   href: "/impressum"  },
+                { label: "Datenschutz", href: "/datenschutz" },
+                { label: "Kontakt",     href: `mailto:${EMAIL}` },
+              ].map(({ label, href }) => (
+                <a key={label} href={href}
+                  style={{ fontSize: "12px", color: "#555", textDecoration: "none", transition: "color 0.2s" }}
+                  onMouseEnter={(e) => e.target.style.color = "#fbd9ad"}
+                  onMouseLeave={(e) => e.target.style.color = "#555"}
+                >
+                  {label}
+                </a>
+              ))}
             </div>
           </Col>
         </Row>

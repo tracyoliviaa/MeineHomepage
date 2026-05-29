@@ -9,285 +9,153 @@ import knowledgeFlowImage from "../../images/nyc.png";
 import coreMapImage from "../../images/hd.png";
 import dailyMindImage from "../../images/onboarding.png";
 
-export default function ProjectPage() {
-  const projects = [
-    {
-      title: "KnowledgeFlow – Deine persönliche Wissensdatenbank",
-      description: "Plattform zum Sammeln, Strukturieren und Lernen von Inhalten mit Notizen, Karteikarten, Spaced Repetition und KI-Features.",
-      image: knowledgeFlowImage,
-      emoji: "📚",
-      github: "https://github.com/tracyoliviaa/KnowledgeFlow",
-      demo: "https://knowledgeflow1.netlify.app",
-      tags: "React · Tailwind · Node.js · Express · MongoDB · Firebase",
-      status: "live"
-    },
-    {
-      title: "CoreMap – Deine Interessen im Gleichgewicht",
-      description: "Self-Management-App zur Strukturierung der 6 Lebensbereiche mit täglichen Impulsen, Gamification und integriertem Ziel-Editor.",
-      image: coreMapImage,
-      emoji: "🗺️",
-      github: "https://github.com/tracyoliviaa/core-map", 
-      demo: "https://tracyoliviaa.github.io/core-map", 
-      tags: "React · MUI · Node.js · MongoDB · LocalStorage",
-      status: "live"
-    },
-    {
-      title: "DailyMind – Intelligenter werden in 10 Minuten",
-      description: "App für tägliche Mini-Lerneinheiten: Fördert gezielt kognitive Fähigkeiten wie Logik, Sprache, Allgemeinwissen, Kreativität und Gedächtnis.",
-      image: dailyMindImage,
-      emoji: "🧠",
-      github: "https://github.com/tracyoliviaa/DailyMind",
-      demo: "https://dailymind-jlirf6htr-tracyoliviaas-projects.vercel.app", 
-      tags: "React · Node.js · MongoDB · Express · Gamification",
-      status: "live"
-    },
-    {
-  title: "Tracy's Dashboard – Personal HQ",
-  description: "Persönliches Dashboard mit Habit-Tracker, Finanz-Tracking (VWCE), Dark Mode und live KPIs — komplett selbst gebaut ohne Template.",
-  image: coreMapImage, // temporär bis du ein Screenshot hast
-  emoji: "📊",
-  github: "https://github.com/tracyoliviaa/tracy-dashboard",
-  demo: "https://tracyoliviaa.github.io/tracy-dashboard",
-  tags: "React · Vite · Tailwind · Context API · Dark Mode",
-  status: "live"
-},
-  ];
+const projects = [
+  {
+    emoji: "📚",
+    title: "KnowledgeFlow",
+    subtitle: "Persönliche Wissensdatenbank",
+    problem: "Wissen geht verloren, wenn es nicht strukturiert gespeichert wird.",
+    built: "Vollständige Web-App mit Login (JWT Auth), Notizen, Karteikarten und Spaced-Repetition.",
+    result: "Nutzer lernen Inhalte 3× effizienter durch tägliche Wiederholung.",
+    tags: ["React", "Node.js", "MongoDB", "JWT Auth", "Firebase", "Tailwind"],
+    image: knowledgeFlowImage,
+    github: "https://github.com/tracyoliviaa/KnowledgeFlow",
+    demo: "https://knowledgeflow-frontend.vercel.app/login",
+    status: "live",
+  },
+  {
+    emoji: "🗺️",
+    title: "CoreMap",
+    subtitle: "Self-Management App",
+    problem: "Viele Menschen verlieren den Überblick über ihre Lebensbereiche und Ziele.",
+    built: "Dashboard mit 6 Lebensbereich-Tracking, täglichen Impulsen, Gamification und Ziel-Editor.",
+    result: "Gamification sorgt für tägliche Rückkehr und nachhaltige Gewohnheiten.",
+    tags: ["React", "MUI", "Node.js", "MongoDB", "LocalStorage"],
+    image: coreMapImage,
+    github: "https://github.com/tracyoliviaa/core-map",
+    demo: "https://core-map.vercel.app",
+    status: "live",
+  },
+  {
+    emoji: "🧠",
+    title: "DailyMind",
+    subtitle: "Kognitive Lern-App",
+    problem: "Kognitive Fähigkeiten brauchen tägliches Training – bestehende Apps sind zu zeitintensiv.",
+    built: "10-Minuten Mini-Sessions für Logik, Sprache, Gedächtnis und Kreativität mit Punktesystem.",
+    result: "Tägliche Lerngewohnheit durch kurze, gamifizierte Sessions.",
+    tags: ["React", "Node.js", "Express", "MongoDB", "Gamification"],
+    image: dailyMindImage,
+    github: "https://github.com/tracyoliviaa/DailyMind",
+    demo: "https://dailymind-jlirf6htr-tracyoliviaas-projects.vercel.app",
+    status: "live",
+  },
+  {
+    emoji: "📊",
+    title: "Tracy's Dashboard",
+    subtitle: "Personal HQ",
+    problem: "Habit-Tracking, Finanzen und Tages-KPIs waren über mehrere Apps verteilt.",
+    built: "Persönliches Dashboard mit Habit-Tracker, ETF-Tracking (VWCE), Dark Mode und Live-KPIs.",
+    result: "Alles an einem Ort – selbst gebaut, kein Template, komplett eigener Code.",
+    tags: ["React", "Vite", "Tailwind", "Context API", "Dark Mode"],
+    image: coreMapImage, // ← ersetze mit echtem Screenshot
+    github: "https://github.com/tracyoliviaa/tracy-dashboard",
+    demo: "https://tracyoliviaa.github.io/tracy-dashboard",
+    status: "live",
+  },
+];
 
-  const getStatusBadge = (status) => {
-    const badges = {
-      live: { text: "Live Demo", color: "#54faae" },
-      "coming-soon": { text: "Bald verfügbar", color: "#ff8c2f" },
-      private: { text: "Privat", color: "#fe3e57" }
-    };
-    const badge = badges[status] || badges.live;
-    return (
-      <span style={{
-        background: `${badge.color}20`,
-        color: badge.color,
-        padding: "4px 12px",
-        borderRadius: "12px",
-        fontSize: "11px",
-        fontWeight: "600",
-        textTransform: "uppercase",
-        letterSpacing: "0.5px"
-      }}>
-        {badge.text}
+const STATUS_BADGE = {
+  live: { text: "Live Demo", color: "#54faae" },
+};
+
+function ValueRow({ icon, label, text }) {
+  return (
+    <div style={{ display: "flex", gap: "8px", fontSize: "12px", lineHeight: 1.55 }}>
+      <span style={{ flexShrink: 0 }}>{icon}</span>
+      <span>
+        <strong style={{ color: "#fbd9ad" }}>{label}:</strong>{" "}
+        <span style={{ color: "#d4d4d4" }}>{text}</span>
       </span>
-    );
-  };
+    </div>
+  );
+}
 
+function ProjectCard({ project }) {
+  const badge = STATUS_BADGE[project.status] || STATUS_BADGE.live;
+  return (
+    <Fade bottom>
+      <div style={{
+        background: "rgba(142,70,186,0.1)", border: "1px solid rgba(142,70,186,0.3)",
+        borderRadius: "16px", padding: "24px", height: "100%",
+        display: "flex", flexDirection: "column", transition: "all 0.3s",
+      }}
+        onMouseEnter={(e) => { e.currentTarget.style.transform = "translateY(-4px)"; e.currentTarget.style.boxShadow = "0 12px 32px rgba(142,70,186,0.25)"; e.currentTarget.style.borderColor = "#8e46ba"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.transform = "translateY(0)"; e.currentTarget.style.boxShadow = "none"; e.currentTarget.style.borderColor = "rgba(142,70,186,0.3)"; }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "12px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <span style={{ fontSize: "24px" }}>{project.emoji}</span>
+            <div>
+              <div style={{ fontWeight: 700, fontSize: "16px", color: "#fbd9ad" }}>{project.title}</div>
+              <div style={{ fontSize: "12px", color: "#eb90ff", fontWeight: 500 }}>{project.subtitle}</div>
+            </div>
+          </div>
+          <span style={{ fontSize: "10px", fontWeight: 600, padding: "3px 9px", borderRadius: "50px", background: `${badge.color}20`, color: badge.color, whiteSpace: "nowrap", textTransform: "uppercase" }}>
+            {badge.text}
+          </span>
+        </div>
+
+        <img src={project.image} alt={project.title}
+          style={{ width: "100%", height: "150px", objectFit: "cover", borderRadius: "10px", marginBottom: "14px", border: "1px solid rgba(142,70,186,0.2)" }} />
+
+        <div style={{ flex: 1, display: "flex", flexDirection: "column", gap: "7px", marginBottom: "14px" }}>
+          <ValueRow icon="🎯" label="Problem"  text={project.problem} />
+          <ValueRow icon="🔧" label="Gebaut"   text={project.built}   />
+          <ValueRow icon="✅" label="Ergebnis" text={project.result}  />
+        </div>
+
+        <div style={{ display: "flex", flexWrap: "wrap", gap: "5px", marginBottom: "14px" }}>
+          {project.tags.map((tag) => (
+            <span key={tag} style={{ fontSize: "11px", padding: "2px 8px", borderRadius: "50px", fontWeight: 500, background: "rgba(142,70,186,0.15)", border: "1px solid rgba(142,70,186,0.3)", color: "#fbd9ad" }}>
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div style={{ display: "flex", gap: "10px" }}>
+          <a href={project.github} target="_blank" rel="noreferrer"
+            style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", padding: "9px", background: "rgba(251,217,173,0.08)", border: "1px solid rgba(251,217,173,0.25)", borderRadius: "8px", color: "#fbd9ad", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>
+            <FaCode /> Code
+          </a>
+          <a href={project.demo} target="_blank" rel="noreferrer"
+            style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", padding: "9px", background: "linear-gradient(135deg,#8e46ba,#b061df)", border: "none", borderRadius: "8px", color: "#fff", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>
+            <FaExternalLinkAlt /> Demo
+          </a>
+        </div>
+      </div>
+    </Fade>
+  );
+}
+
+export default function ProjectPage() {
   return (
     <section className="home-section">
       <Container fluid id="home">
         <Particle />
         <Container className="home-content">
-          <div
-            className="d-flex justify-content-center"
-            style={{
-              backgroundColor: "#fbd9ad",
-              padding: "20px 0",
-              borderRadius: "12px",
-              marginTop: "80px",
-            }}
-          >
+          <div style={{ backgroundColor: "#fbd9ad", padding: "20px 0", borderRadius: "12px", marginTop: "80px", textAlign: "center" }}>
             <Zoom left cascade>
-              <h1 style={{ color: "rgb(134 61 176)", margin: 0 }}>ALLE PROJEKTE</h1>
+              <h1 style={{ color: "rgb(134,61,176)", margin: 0 }}>Alle Projekte</h1>
             </Zoom>
           </div>
 
-          <div className="mt-5">
-            <Container fluid className="certificate-section">
-              <Container>
-                <Row className="g-5">
-                  {projects.map((project, index) => (
-                    <Col md={4} key={index}>
-                      <Fade bottom>
-                        <div 
-                          className="singleProject" 
-                          style={{ 
-                            backgroundColor: "rgb(142 70 186 / 31%)", 
-                            border: "1px solid",
-                            position: "relative",
-                            minHeight: "520px"
-                          }}
-                        >
-                          <div className="projectContent">
-                            <div style={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                              alignItems: "flex-start",
-                              marginBottom: "12px"
-                            }}>
-                              <h5 
-                                className="project-title" 
-                                style={{ 
-                                  color: "#fbd9ad",
-                                  margin: 0,
-                                  flex: 1,
-                                  display: "flex",
-                                  alignItems: "center",
-                                  gap: "8px"
-                                }}
-                              >
-                                <span style={{ fontSize: "24px" }}>{project.emoji}</span>
-                                {project.title.split('–')[0]}
-                              </h5>
-                              {getStatusBadge(project.status)}
-                            </div>
-
-                            <p style={{
-                              color: "#eb90ff",
-                              fontSize: "13px",
-                              marginBottom: "12px",
-                              fontWeight: "600"
-                            }}>
-                              {project.title.split('–')[1]}
-                            </p>
-
-                            <img 
-                              src={project.image} 
-                              alt={project.title} 
-                              className="project-image"
-                              style={{
-                                width: "100%",
-                                height: "180px",
-                                objectFit: "cover",
-                                borderRadius: "8px",
-                                marginBottom: "16px"
-                              }}
-                            />
-
-                            <div style={{
-                              display: "flex",
-                              gap: "12px",
-                              marginBottom: "16px"
-                            }}>
-                              <a 
-                                href={project.github} 
-                                target="_blank" 
-                                rel="noreferrer" 
-                                style={{
-                                  flex: 1,
-                                  display: "flex",
-                                  alignItems: "center",
-                                  justifyContent: "center",
-                                  gap: "6px",
-                                  padding: "10px",
-                                  background: "rgba(251, 217, 173, 0.1)",
-                                  border: "1px solid rgba(251, 217, 173, 0.3)",
-                                  borderRadius: "8px",
-                                  color: "#fbd9ad",
-                                  textDecoration: "none",
-                                  transition: "all 0.3s ease",
-                                  fontSize: "14px",
-                                  fontWeight: "600"
-                                }}
-                                onMouseEnter={(e) => {
-                                  e.currentTarget.style.background = "rgba(251, 217, 173, 0.2)";
-                                  e.currentTarget.style.borderColor = "#fbd9ad";
-                                }}
-                                onMouseLeave={(e) => {
-                                  e.currentTarget.style.background = "rgba(251, 217, 173, 0.1)";
-                                  e.currentTarget.style.borderColor = "rgba(251, 217, 173, 0.3)";
-                                }}
-                              >
-                                <FaCode /> Code
-                              </a>
-
-                              {project.status === "live" && project.demo ? (
-                                <a 
-                                  href={project.demo} 
-                                  target="_blank" 
-                                  rel="noreferrer"
-                                  style={{
-                                    flex: 1,
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    gap: "6px",
-                                    padding: "10px",
-                                    background: "linear-gradient(135deg, #8e46ba, #b061df)",
-                                    border: "none",
-                                    borderRadius: "8px",
-                                    color: "#fff",
-                                    textDecoration: "none",
-                                    transition: "all 0.3s ease",
-                                    fontSize: "14px",
-                                    fontWeight: "600"
-                                  }}
-                                  onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = "translateY(-2px)";
-                                    e.currentTarget.style.boxShadow = "0 4px 12px rgba(142, 70, 186, 0.4)";
-                                  }}
-                                  onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = "translateY(0)";
-                                    e.currentTarget.style.boxShadow = "none";
-                                  }}
-                                >
-                                  <FaExternalLinkAlt /> Demo
-                                </a>
-                              ) : (
-                                <button
-                                  disabled
-                                  style={{
-                                    flex: 1,
-                                    display: "flex",
-                                    alignItems: "center",
-                                    justifyContent: "center",
-                                    gap: "6px",
-                                    padding: "10px",
-                                    background: "rgba(255, 255, 255, 0.05)",
-                                    border: "1px solid rgba(255, 255, 255, 0.1)",
-                                    borderRadius: "8px",
-                                    color: "#888",
-                                    cursor: "not-allowed",
-                                    fontSize: "14px",
-                                    fontWeight: "600"
-                                  }}
-                                >
-                                  <FaExternalLinkAlt /> Demo
-                                </button>
-                              )}
-                            </div>
-
-                            <p 
-                              className="project--desc" 
-                              style={{ 
-                                background: "#fbd9ad", 
-                                color: "#b061df", 
-                                fontWeight: 600,
-                                padding: "12px",
-                                borderRadius: "8px",
-                                fontSize: "14px",
-                                lineHeight: "1.6",
-                                marginBottom: "12px"
-                              }}
-                            >
-                              {project.description}
-                            </p>
-
-                            <div 
-                              className="project--lang" 
-                              style={{ 
-                                background: "#fbd9ad", 
-                                color: "#b061df", 
-                                fontWeight: 600,
-                                padding: "12px",
-                                borderRadius: "8px",
-                                fontSize: "13px"
-                              }}
-                            >
-                              {project.tags}
-                            </div>
-                          </div>
-                        </div>
-                      </Fade>
-                    </Col>
-                  ))}
-                </Row>
-              </Container>
-            </Container>
-          </div>
+          <Row className="g-4 mt-4">
+            {projects.map((project) => (
+              <Col md={4} key={project.title}>
+                <ProjectCard project={project} />
+              </Col>
+            ))}
+          </Row>
         </Container>
       </Container>
     </section>
