@@ -1,10 +1,13 @@
 {
   "files": {
     "main.css": "/MeineHomepage/static/css/main.51798d4f.css",
-    "main.js": "/MeineHomepage/static/js/main.a785ced8.js",
+    "main.js": "/MeineHomepage/static/js/main.1e95bff4.js",
     "static/media/nyc.png": "/MeineHomepage/static/media/nyc.139298242835d62facd4.png",
-    "static/media/hd.png": "/MeineHomepage/static/media/hd.49765c958331f0edefe9.png",
-    "static/media/onboarding.png": "/MeineHomepage/static/media/onboarding.542f8dee519b9dd4585f.png",
+    "static/media/coremap-dashboard.jpg": "/MeineHomepage/static/media/coremap-dashboard.1f82bb8d3ad3512a7869.jpg",
+    "static/media/mac-cleaner.jpg": "/MeineHomepage/static/media/mac-cleaner.29252c6d8b2af55fe7cb.jpg",
+    "static/media/grafana-dashboard.png": "/MeineHomepage/static/media/grafana-dashboard.9d3a9662f16f03c735c0.png",
+    "static/media/dailymind-dashboard.jpg": "/MeineHomepage/static/media/dailymind-dashboard.e4cec2ad3e3a313b1ce7.jpg",
+    "static/media/tracy-dashboard.jpg": "/MeineHomepage/static/media/tracy-dashboard.dce129670a9fd185f5eb.jpg",
     "static/media/pc.png": "/MeineHomepage/static/media/pc.06ad21ea51446dc1062f.png",
     "static/media/Vs.png": "/MeineHomepage/static/media/Vs.19edc3fbac1c451f289d.png",
     "static/media/pg.png": "/MeineHomepage/static/media/pg.9f8f5cd98ce5726b002f.png",
@@ -15,10 +18,10 @@
     "static/media/chorme.svg": "/MeineHomepage/static/media/chorme.b0bd08e3d4226484ce842d3453b979e9.svg",
     "index.html": "/MeineHomepage/index.html",
     "main.51798d4f.css.map": "/MeineHomepage/static/css/main.51798d4f.css.map",
-    "main.a785ced8.js.map": "/MeineHomepage/static/js/main.a785ced8.js.map"
+    "main.1e95bff4.js.map": "/MeineHomepage/static/js/main.1e95bff4.js.map"
   },
   "entrypoints": [
     "static/css/main.51798d4f.css",
-    "static/js/main.a785ced8.js"
+    "static/js/main.1e95bff4.js"
   ]
 }
