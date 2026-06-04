@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 import { HiArrowRight } from "react-icons/hi";
 
 import knowledgeFlowImage from "../../images/nyc.png";
-import coreMapImage from "../../images/hd.png";
-import dailyMindImage from "../../images/onboarding.png";
+import coreMapImage from "../../images/coremap-dashboard.jpg";
+import dailyMindImage from "../../images/dailymind-dashboard.jpg";
 
 // ─── Projekte – mit Business Value ───────────────────────────────────────────
 const projects = [

@@ -6,8 +6,11 @@ import { FaCode, FaExternalLinkAlt } from "react-icons/fa";
 import Particle from "../../Particle";
 
 import knowledgeFlowImage from "../../images/nyc.png";
-import coreMapImage from "../../images/hd.png";
-import dailyMindImage from "../../images/onboarding.png";
+import coreMapImage from "../../images/coremap-dashboard.jpg";
+import dailyMindImage from "../../images/dailymind-dashboard.jpg";
+import macCleanerImage from "../../images/mac-cleaner.jpg";
+import linuxServerImage from "../../images/grafana-dashboard.png";
+import tracyDashboardImage from "../../images/tracy-dashboard.jpg";
 
 const projects = [
   {
@@ -49,6 +52,36 @@ const projects = [
     demo: "https://dailymind-jlirf6htr-tracyoliviaas-projects.vercel.app",
     status: "live",
   },
+{
+  emoji: "🧹",
+  title: "MacCleaner",
+  subtitle: "Native macOS Utility App — Swift & SwiftUI",
+  problem: "CleanMyMac kostet €40/Jahr. Die meisten Nutzer brauchen nur wenige Kernfunktionen.",
+  built: "Vollständige native macOS App in Swift/SwiftUI mit Disk Scanner, Memory Monitor, CPU Monitor, Duplicate Finder, Privacy Cleaner und App Uninstaller. MVVM-Architektur, keine externen Dependencies.",
+  result: "Funktionsfähige Utility-App als persönliche Alternative zu einem kommerziellen Produkt — zeigt systemnahe Programmierung außerhalb des Web-Stacks.",
+  tags: ["Swift", "SwiftUI", "macOS", "MVVM", "FileManager", "CryptoKit", "async/await"],
+  image: macCleanerImage,
+  github: "https://github.com/tracyoliviaa/MacCleaner",
+  demo: "https://github.com/tracyoliviaa/MacCleaner",
+  demoLabel: "Details",
+  status: "native",
+},
+{
+  emoji: "🖥️",
+  title: "Linux Server Lab",
+  subtitle: "Rechenzentrum & Cloud Infrastructure",
+  problem: "Praxiserfahrung mit Linux-Administration und Cloud-Infrastruktur für Rechenzentrum-Bewerbungen fehlte.",
+  built: "Ubuntu Linux Server mit SSH Key Authentication, Nginx Webserver, UFW Firewall, fail2ban Intrusion Prevention, Prometheus Monitoring, Grafana Dashboard und automatisiertem Backup-Script. Zusätzlich auf Google Cloud Platform (GCP) deployed.",
+  result: "Vollständiger Linux-Server Stack mit Security Hardening, Monitoring und Automation — dokumentiert und reproduzierbar.",
+  tags: ["Linux", "Ubuntu", "Nginx", "SSH", "UFW", "fail2ban", "Prometheus", "Grafana", "GCP", "Bash", "Docker"],
+  image: linuxServerImage,
+  github: "https://github.com/tracyoliviaa",
+  demo: "https://github.com/tracyoliviaa",
+  demoLabel: "Details",
+  status: "infra",
+},
+
+
   {
     emoji: "📊",
     title: "Tracy's Dashboard",
@@ -57,7 +90,7 @@ const projects = [
     built: "Persönliches Dashboard mit Habit-Tracker, ETF-Tracking (VWCE), Dark Mode und Live-KPIs.",
     result: "Alles an einem Ort – selbst gebaut, kein Template, komplett eigener Code.",
     tags: ["React", "Vite", "Tailwind", "Context API", "Dark Mode"],
-    image: coreMapImage, // ← ersetze mit echtem Screenshot
+    image: tracyDashboardImage,
     github: "https://github.com/tracyoliviaa/tracy-dashboard",
     demo: "https://tracyoliviaa.github.io/tracy-dashboard",
     status: "live",
@@ -66,6 +99,8 @@ const projects = [
 
 const STATUS_BADGE = {
   live: { text: "Live Demo", color: "#54faae" },
+  native: { text: "Native App", color: "#fbd9ad" },
+  infra: { text: "Infrastructure", color: "#8ad7ff" },
 };
 
 function ValueRow({ icon, label, text }) {
@@ -129,7 +164,7 @@ function ProjectCard({ project }) {
           </a>
           <a href={project.demo} target="_blank" rel="noreferrer"
             style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "6px", padding: "9px", background: "linear-gradient(135deg,#8e46ba,#b061df)", border: "none", borderRadius: "8px", color: "#fff", textDecoration: "none", fontSize: "13px", fontWeight: 600 }}>
-            <FaExternalLinkAlt /> Demo
+            <FaExternalLinkAlt /> {project.demoLabel || "Demo"}
           </a>
         </div>
       </div>
